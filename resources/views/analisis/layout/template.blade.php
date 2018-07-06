@@ -28,12 +28,12 @@
 				</div>
 			</div>
 			<!-- CUERPO  -->
-			<div class="container-fluid cuerpo">
+			<div class="cuerpo">
 				@yield('contenido')
 			</div>
 			
 			<!-- FOOTER  -->
-			<div class="container-fluid footer">
+			<div class="footer">
 				<div class="icon">
 
 				</div>

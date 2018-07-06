@@ -13,12 +13,14 @@
 }
 
 .cuerpo{
+	margin:20 auto;
 	background-color: #CEF6F5;
 	height: 80%;
 }
 
 .footer{
-	
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 .registrado{
