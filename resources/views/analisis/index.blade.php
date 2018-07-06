@@ -4,7 +4,8 @@
 <div class="index-titulo">
 	<h3>Noticias</h3>
 	<p>
-		Seccion de noticias para mantener a nuestros clientes actualizados, 
+		Esta es una seccion de noticias, la cual tiene la funcion de mantener a nuestros cliente actualizados
+		sobre nuestras inventigaciones y avances. 
 
 	</p>
 </div>
