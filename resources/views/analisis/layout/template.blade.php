@@ -54,7 +54,7 @@
 					</ul>
 				</div>
 				<div class="registrado">
-					<h6 class="alert alert-light">ISP @ 2018</h6>
+					<h6 class="form disabled">ISP @ 2018</h6>
 				</div>
 			</div>
 		</div>
