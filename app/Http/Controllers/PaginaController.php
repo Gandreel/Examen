@@ -9,4 +9,8 @@ class PaginaController extends Controller
     public function index(){
     	return view('analisis/index');
     }
+
+    public function muestra(){
+    	return view('analisis/RegistroMuestra');
+    }
 }
