@@ -13,11 +13,11 @@
 }
 
 .cuerpo{
+	height: 600px;
 	margin:20 auto;
+	margin-top: 3%;
 	padding-right: 20px;
 	padding-left: 20px;
-	background-color: #CEF6F5;
-	height: 80%;
 }
 
 .footer{
@@ -27,4 +27,9 @@
 
 .registrado{
 	text-align: center;
+}
+
+.index-titulo{
+	text-align: center;
+
 }
