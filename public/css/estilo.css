@@ -1,0 +1,22 @@
+.nav a{
+	color: #000;
+}
+
+.nav a:hover{
+	background-color: #00BFFF;
+	color: #fff;
+}
+
+.header{
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.cuerpo{
+	background-color: #CEF6F5;
+	height: 80%;
+}
+
+.footer{
+	
+}
