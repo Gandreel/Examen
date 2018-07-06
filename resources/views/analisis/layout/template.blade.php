@@ -35,26 +35,26 @@
 			<!-- FOOTER  -->
 			<div class="container-fluid footer">
 				<div class="icon">
-					
+
 				</div>
 				<div class="link">
 					<ul class="nav justify-content-center">
 						<li class="nav-item">
-							<a class="nav-link active" href="#">Active</a>
+							<a class="nav-link" href="#">Inicio</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Link</a>
+							<a class="nav-link" href="#">Servicio</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Link</a>
+							<a class="nav-link" href="#">Clientes</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link disabled" href="#">Disabled</a>
+							<a class="nav-link" href="#">Politica de Privacidad</a>
 						</li>
 					</ul>
 				</div>
 				<div class="registrado">
-					
+					<h6 class="alert alert-light">ISP @ 2018</h6>
 				</div>
 			</div>
 		</div>
