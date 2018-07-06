@@ -27,9 +27,15 @@
 
 .registrado{
 	text-align: center;
+	color: #999999;
 }
 
 .index-titulo{
 	text-align: center;
+	width: 40%;
+	margin:0 auto;
+}
 
+.index-cuerpo{
+	margin: 0 auto;
 }
