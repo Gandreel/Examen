@@ -12,10 +12,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($datos as $mue)
+				@foreach($datos as $muestra)
 					<tr>
-						<td>{{ $mue->Particular_codigoParticular}}</td>
-						<td>{{ $mue->idAnalisisMuestras}}</td>
+						<td>{{ $muestra->Particular_codigoParticular}}</td>
+						<td>{{ $muestra->idAnalisisMuestras}}</td>
 						<td></td>
 					</tr>
 				@endforeach
