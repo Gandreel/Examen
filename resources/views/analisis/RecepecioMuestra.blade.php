@@ -9,14 +9,14 @@
 
 <body>
   <h1 align="center">Recepcion de Muestras</h1>
-  <div clear = "both" float = "left">
+  <div>
     <ul>
       <li><input type="text" placeholder="Codigo Cliente" name="txtCodigo" required></li>
       <li><input type="text" placeholder="Rut Cliente" name="txtRut" required></li>
       <li><input type="text" placeholder="Nombre Cliente" name="txtMombre" required></li>
     </ul>
   </div>
-  <div float = "left">
+  <div>
     <label>Fecha de Recepcion</label>
     <ul>
       <li><input type="date" placeholder="Fecha" name="dateFecha" required></li>
