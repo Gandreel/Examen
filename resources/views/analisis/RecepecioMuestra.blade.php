@@ -20,7 +20,7 @@
       <input class="text" type="text" placeholder="Canridad Muestra" name="txtCantMuestra" required>
     </div>
     <div class="col-8">
-      <h5>Tipo de análisis a realizar</h5>
+      <h5>Tipo de analisis a realizar</h5>
       <select class="text" name="Tipo de Análisis">
         <option value="C01">Microtoxinas</option>
         <option value="C02"></option>

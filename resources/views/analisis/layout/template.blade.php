@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<meta charset="utf-8"/>
-		<meta http-equiv="X-UA-Compatible"/>
+		<meta charset="utf-8">
 		<title>@yield('title')</title>
 		<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" media="all"/>
 		<link href="{{asset('css/estilo.css')}}" rel="stylesheet" type="text/css" media="all"/>

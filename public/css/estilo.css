@@ -85,3 +85,7 @@
     height: 60px;
     padding-left: 10px;
 }
+
+.cuerpo-Listar table{
+	width: 100%;
+}

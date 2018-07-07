@@ -19,3 +19,8 @@ Route::get('/', function () {
 Route::get('registro','PaginaController@RegistroParticular');
 Route::get('inicio','PaginaController@index');
 Route::get('muestra','PaginaController@muestra');
+Route::get('procesar','PaginaController@ListaMuestra');
+Route::get('registro-Muestra','PaginaController@RegistroMuestra');
+Route::get('buscar','PaginaController@BusquedaMuestra');
+Route::get('resultado','PaginaController@resultadoMuestra');
+
