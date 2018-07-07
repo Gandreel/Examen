@@ -20,8 +20,8 @@
 					</div>
 					<div class="nav col-3">
 						<nav class="nav justify-content-end">
-							<a class="nav-item nav-link" href="#">Inicio</a>
-							<a class="nav-item nav-link" href="#">Cliente</a>
+							<a class="nav-item nav-link" href="{{URL('inicio')}}">Inicio</a>
+							<a class="nav-item nav-link" href="{{URL('registro')}}">Cliente</a>
 							<a class="nav-item nav-link" href="#">Intranet</a>
 						</nav>
 					</div>
@@ -40,13 +40,13 @@
 				<div class="link">
 					<ul class="nav justify-content-center">
 						<li class="nav-item">
-							<a class="nav-link" href="#">Inicio</a>
+							<a class="nav-link" href="{{URL('inicio')}}">Inicio</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Servicio</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Clientes</a>
+							<a class="nav-link" href="{{URL('registro')}}">Clientes</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Politica de Privacidad</a>
