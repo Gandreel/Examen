@@ -11,6 +11,10 @@ class PaginaController extends Controller
     }
 
     public function muestra(){
-    	return view('analisis/RegistroMuestra');
+    	return view('analisis/RecepecioMuestra');
+    }
+
+    public function RegistroParticular(){
+    	return view('analisis/RegistroParticular');
     }
 }

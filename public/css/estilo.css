@@ -13,7 +13,7 @@
 }
 
 .cuerpo{
-	height: 595px;
+	height: 565px;
 	margin:20 auto;
 	margin-top: 3%;
 	padding-right: 20px;
@@ -38,4 +38,50 @@
 
 .index-cuerpo{
 	margin: 0 auto;
+}
+.muestra_titulo{
+	text-align: center;
+}
+.muestra_cuerpo{
+	margin: 0 auto;
+	padding-top: 5px;
+}
+
+.muestra_cuerpo div{
+	border-width: 1px;
+	border-style: dashed;
+}
+
+.muestra_cuerpo h5{
+	text-align: center;
+}
+
+.text{
+	width: 100%;
+	margin-bottom: 15px;
+	border: 0.35mm groove #008000;
+    border-radius: 5px;
+    height: 40px;
+    padding-left: 10px;
+}
+.search{
+	margin-top: 15px;
+}
+.boton{
+	margin-bottom: 15px;
+	border: 0.35mm solid;
+	border-radius: 5px;
+	background-color: #3077BF;
+	color: #fff;
+	padding: 4px;
+	width: 75px;
+}
+
+.textArea{
+	width: 100%;
+	margin-bottom: 15px;
+	border: 0.35mm groove #008000;
+    border-radius: 5px;
+    height: 60px;
+    padding-left: 10px;
 }

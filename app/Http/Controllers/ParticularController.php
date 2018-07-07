@@ -10,7 +10,5 @@ use Illuminate\Support\Facades\DB;
 
 class ParticularController extends Controller
 {
-    public function RegistroParticular(){
-    	return view('analisis/RegistroParticular');
-    }
+    
 }

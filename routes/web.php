@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('registro','ParticularController@RegistroParticular');
+// Controllador para vistas
+Route::get('registro','PaginaController@RegistroParticular');
 Route::get('inicio','PaginaController@index');
 Route::get('muestra','PaginaController@muestra');
