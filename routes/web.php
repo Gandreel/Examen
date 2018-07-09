@@ -21,6 +21,7 @@ Route::get('inicio','PaginaController@index');
 Route::get('muestra','PaginaController@muestra');
 
 Route::get('procesar','PaginaController@ListaMuestra');
+Route::post('store','');
 
 Route::get('registro-Muestra','PaginaController@RegistroMuestra');
 Route::get('buscar','PaginaController@BusquedaMuestra');

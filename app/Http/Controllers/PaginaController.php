@@ -21,11 +21,12 @@ class PaginaController extends Controller
     }
 
     public function ListaMuestra(){
+        $datos = null;
         $datos = DB::table('resultadoanalisis')
             ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
             ->select('analisismuestras.*', 'resultadoanalisis.estado')
             ->get();
-    	return view('analisis/ListaMuestra',compact($datos));
+    	return view('analisis/ListaMuestra',compact('datos'));
     }
 
     public function RegistroMuestra(){
