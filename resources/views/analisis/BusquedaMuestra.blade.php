@@ -10,7 +10,7 @@
 	<table>
 			<tr>
 				<td><input type="text" placeholder="Codigo de muestra" name="txtCodigoMuestra"></td>
-				<button type="submit" name="boton" class="boton2" value="{{$muestra->idAnalisisMuestras}}">Buscar</button>
+				<button type="submit" name="boton" class="boton2">Buscar</button>
 			</tr>
 			<thead>
 				<tr>

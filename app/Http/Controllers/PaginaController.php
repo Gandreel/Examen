@@ -34,7 +34,8 @@ class PaginaController extends Controller
     }
 
     public function BusquedaMuestra(){
-    	return view('analisis/BusquedaMuestra');
+        $datos = DB::table('resultadoanalisis')->get();
+    	return view('analisis/BusquedaMuestra',compact('datos'));
     }
 
     public function resultadoMuestra(){
