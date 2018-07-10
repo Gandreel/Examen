@@ -39,7 +39,7 @@ CREATE TABLE `analisismuestras` (
   CONSTRAINT `fk_Empresa1` FOREIGN KEY (`Empresa_codigoEmpresa`) REFERENCES `empresa` (`codigoEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Particular1` FOREIGN KEY (`Particular_codigoParticular`) REFERENCES `particular` (`codigoParticular`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_empleado1` FOREIGN KEY (`rutEmpleadoRecibe`) REFERENCES `empleado` (`rutEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,6 +48,7 @@ CREATE TABLE `analisismuestras` (
 
 LOCK TABLES `analisismuestras` WRITE;
 /*!40000 ALTER TABLE `analisismuestras` DISABLE KEYS */;
+INSERT INTO `analisismuestras` VALUES (1,'0000-00-00',0.2,1,NULL,1,'19773471-k'),(2,'0000-00-00',0.2,1,NULL,1,'19773471-k'),(3,'1995-01-29',0.2,1,NULL,1,'19773471-k'),(4,'2018-07-07',0.2,1,NULL,1,'19773471-k'),(5,'0000-00-00',0.2,1,NULL,1,'19773471-k'),(6,'0000-00-00',0.2,1,NULL,1,'19773471-k');
 /*!40000 ALTER TABLE `analisismuestras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,6 +102,7 @@ CREATE TABLE `empleado` (
 
 LOCK TABLES `empleado` WRITE;
 /*!40000 ALTER TABLE `empleado` DISABLE KEYS */;
+INSERT INTO `empleado` VALUES ('19773471-k','Javito-Kun','123','1');
 /*!40000 ALTER TABLE `empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,7 +147,7 @@ CREATE TABLE `particular` (
   `direccionParticular` varchar(45) NOT NULL,
   `emailParticular` varchar(45) NOT NULL,
   PRIMARY KEY (`codigoParticular`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +156,7 @@ CREATE TABLE `particular` (
 
 LOCK TABLES `particular` WRITE;
 /*!40000 ALTER TABLE `particular` DISABLE KEYS */;
+INSERT INTO `particular` VALUES (1,'19772400-5','123456','Alexander Maldonado','algo #775','asl@gmail.com');
 /*!40000 ALTER TABLE `particular` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,6 +190,7 @@ CREATE TABLE `resultadoanalisis` (
 
 LOCK TABLES `resultadoanalisis` WRITE;
 /*!40000 ALTER TABLE `resultadoanalisis` DISABLE KEYS */;
+INSERT INTO `resultadoanalisis` VALUES (1,4,'2018-07-08',150,'\0','19773471-k');
 /*!40000 ALTER TABLE `resultadoanalisis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -227,7 +231,7 @@ CREATE TABLE `tipoanalisis` (
   `idTipoAnalisis` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`idTipoAnalisis`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -236,6 +240,7 @@ CREATE TABLE `tipoanalisis` (
 
 LOCK TABLES `tipoanalisis` WRITE;
 /*!40000 ALTER TABLE `tipoanalisis` DISABLE KEYS */;
+INSERT INTO `tipoanalisis` VALUES (1,'Algo');
 /*!40000 ALTER TABLE `tipoanalisis` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -248,4 +253,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-06  1:57:31
+-- Dump completed on 2018-07-10 11:32:31
