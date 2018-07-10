@@ -15,6 +15,5 @@
             <h5>PPM de la muestra</h5>
             <input class="text" type="text" name="txtMicrotoxinas" />
             <input class="text" type="text" name="txtMetalesPesados" />
-            <input class="boton" type="submit" value="Guardar Análisis" name="btnGuardarAnalisis" />
-            
+            <input class="boton" type="submit" value="Guardar Análisis" name="btnGuardarAnalisis" />           
 @endsection
