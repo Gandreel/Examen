@@ -40,4 +40,6 @@ class PaginaController extends Controller
     public function resultadoMuestra(){
     	return view('analisis/Resultado');
     }
+
+    
 }

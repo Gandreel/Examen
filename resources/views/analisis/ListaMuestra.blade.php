@@ -20,8 +20,8 @@
 				<td>{{ $muestra->Particular_codigoParticular}}</td>
 				<td>{{ $muestra->idAnalisisMuestras}}</td>
 				<td>
-					<form method="post" action="{{URL::to('')}}">
-						<button type="submit" class="boton2" value="{{$muestra->idAnalisisMuestras}}">Procesar</button>
+					<form method="post" action="{{URL::to('store')}}">
+						<button type="submit" name="boton" class="boton2" value="{{$muestra->idAnalisisMuestras}}">Procesar</button>
 						<input type="hidden" name="_token" value="{{csrf_token()}}"/>
 					</form>
 				</td>
