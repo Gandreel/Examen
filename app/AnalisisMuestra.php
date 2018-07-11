@@ -8,5 +8,4 @@ class AnalisisMuestra extends Model
 {
     public $table = 'analisismuestras';
     public $timestamps = false;
-    protected $primaryKey = 'idTipoAnalisis';
 }

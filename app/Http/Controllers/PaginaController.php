@@ -51,10 +51,13 @@ class PaginaController extends Controller
     public function store(Request $request){
             
             $datos = DB::table('resultadoanalisis')
+            ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
             ->where('resultadoanalisis.idAnalisisMuestras', '=', $request->input('boton'))
+            ->select('analisismuestras.*', 'resultadoanalisis.*')
             ->get();
-            //return view('analisis/RegistroMuestra',compact('datos'));
-            echo $datos;
+            
+            return view('analisis/RegistroMuestra',compact('datos'));
+           
             
     }
 
