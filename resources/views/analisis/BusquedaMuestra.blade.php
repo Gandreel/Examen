@@ -7,11 +7,9 @@
 	<h5 color= "gray">Escribe el codigo de la muestra a buscar</h5>
 </div>
 <div class="cuerpo-Listar">
+	<input type="text" placeholder="Codigo de muestra" name="txtCodigoMuestra">
+	<button type="submit" name="boton" class="boton">Buscar</button>
 	<table>
-			<tr>
-				<td><input type="text" placeholder="Codigo de muestra" name="txtCodigoMuestra"></td>
-				<button type="submit" name="boton" class="boton2">Buscar</button>
-			</tr>
 			<thead>
 				<tr>
 					<th>Codigo de la muestra</th>
@@ -22,7 +20,17 @@
 				@foreach($datos as $muestra)
 				<tr>
 					<td>{{ $muestra->idAnalisisMuestras}}</td>
+					<td>@if($muestra->estado == 0)
+							Procesando
+							@else
+							Termiando
+							@endif</td>
 					<td>{{ $muestra->estado}}</td>
+					<td>@if($muestra->estado == 0)
+									Procesando
+									@else
+									Termiando
+									@endif</td>
 				</tr>
 				@endforeach
 			</tbody>
