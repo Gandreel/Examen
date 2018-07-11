@@ -31,6 +31,7 @@
 						<td style="color:#FFFFFF">INGRESAR: </td>
 						<td align=center>
 							<input style="font-weight:bold" type="submit" name="Submit" value="Login"">
+							<input type="hidden" name="_token" value="{{csrf_token()}}"/>
 						</td>
 					</tr>
 				</table>

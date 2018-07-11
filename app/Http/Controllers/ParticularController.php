@@ -2,6 +2,8 @@
 
 namespace analisis\Http\Controllers;
 
+use analisis\Particular;
+use analisis\Empresa;
 use Illuminate\Http\Request;
 
 class particularController extends Controller
@@ -23,7 +25,23 @@ class particularController extends Controller
 
     public function Loger(Request $request)
     {
-        
+        echo 'funciona';
+        try {
+            try {
+                $datos = Particular::where('nombreParticular',$request->input('username'))
+                ->orWhere('passwordParticular',$request->input('password'))
+                ->get();
+                //
+            } catch (Exception $e) {
+                $datos = Empresa::where('nombreEmpresa',$request->input('username'))
+                ->orWhere('passwordEmpresa',$request->input('password'))
+                ->get(); 
+                //
+            }
+        } catch (Exception $e) {
+            echo 'usuario Incorrecto';
+            
+        }
     }
 
     /**
@@ -33,7 +51,11 @@ class particularController extends Controller
      */
     public function create()
     {
-        
+        try {
+            
+        } catch (Exception $e) {
+            
+        }
     }
 
     /**
