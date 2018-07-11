@@ -23,7 +23,7 @@ class analisisMuestraController extends Controller
      */
     public function create()
     {
-        //
+        return view('analisis/RecepcioMuestra');
     }
 
     /**
@@ -34,7 +34,23 @@ class analisisMuestraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $fecha = $request->input('dateFecha');
+            $temperatura = $request->input('txtTemperatura');
+            $cantidad = $request->input('txtCantMuestra');
+            $rutEmpresa = $request->input('txtRut');
+            $rutEmpleado = $request->input('txtEmpleado');
+
+            echo $fecha;
+
+            DB::insert('insert into analisismuestra (fechaRecepcion,temperaturaMuestra,cantidadMuestra,Empresa_codigoEmpresa,rutEmpleadoRecibe) values(?,?,?,?,?)',[$fecha,$temperatura,$cantidad,$rutEmpresa,$rutEmpleado]);
+
+
+            echo 'registro exitoso';
+        } catch (Exception $e) {
+
+            echo 'registro erroneo';
+        }
     }
 
     /**
