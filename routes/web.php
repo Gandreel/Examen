@@ -29,9 +29,8 @@ Route::post('loger','particularController@Loger');
 Route::get('recepcion','analisisMuestraController@create');
 Route::post('store','analisisMuestraController@store');
 
-
-//Route::get('procesar','PaginaController@ListaMuestra');
-//Route::post('store','PaginaController@store');
+Route::get('procesar','analisisMuestraController@ListaMuestra');
+Route::post('store3','analisisMuestraController@store');
 
 //Route::get('registro-Muestra','PaginaController@RegistroMuestra');
 //Route::get('buscar','PaginaController@BusquedaMuestra');

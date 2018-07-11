@@ -57,6 +57,18 @@ class analisisMuestraController extends Controller
         }
     }
 
+    public function ListaMuestra(){
+        $datos = DB::table('resultadoanalisis')
+            ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
+            ->select('analisismuestras.*', 'resultadoanalisis.estado')
+            ->get();
+        return view('analisis/ListaMuestra',compact('datos'));
+    }
+
+    public function store3(Request $request){
+
+    }
+
     /**
      * Display the specified resource.
      *
