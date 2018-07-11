@@ -33,11 +33,29 @@
 			
 			<!-- FOOTER  -->
 			<div class="footer">
-				<div class="icon">
-
+				<div class="nav justify-content-center">
+						<li class="nav-item">
+							<a href="https://www.instagram.com/?hl=es-la"><img src="{{asset('img/instagram.png')}}"></a>
+						</li>	
+						&nbsp;
+						&nbsp;
+						<li class="nav-item">
+							<a href="https://www.snapchat.com/l/es/"><img src="{{asset('img/snapchat.png')}}"></a>
+						</li>	
+						&nbsp;
+						&nbsp;
+						<li class="nav-item">
+							<a href="https://twitter.com/"><img src="{{asset('img/twitter.png')}}"></a>
+						</li>	
+						&nbsp;
+						&nbsp;
+						<li class="nav-item">
+							<a href="https://www.facebook.com/"><img src="{{asset('img/facebook.png')}}"></a>
+						</li>					
 				</div>
 				<div class="link">
 					<ul class="nav justify-content-center">
+						
 						<li class="nav-item">
 							<a class="nav-link" href="{{URL('inicio')}}">Inicio</a>
 						</li>
@@ -49,7 +67,7 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Politica de Privacidad</a>
-						</li>
+						</li>						
 					</ul>
 				</div>
 				<div class="registrado">
