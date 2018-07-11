@@ -83,6 +83,10 @@ class particularController extends Controller
                 ->where('rutParticular', $rut)
                 ->get();
 
+            $users = DB::table('particular')->select('codigoParticular')
+                ->where('rutParticular', $rut)
+                ->first();
+
             DB::table('telefono')->insert(
                 ['numeroTelefono'=> $telefono,'Particular_codigoParticular' => $users->codigoParticular]);
 
