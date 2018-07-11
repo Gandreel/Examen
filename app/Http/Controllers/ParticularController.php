@@ -80,7 +80,7 @@ class particularController extends Controller
                 ['rutParticular' => $rut,'nombreParticular' =>$nombre,'passwordParticular'=>$password,'emailParticular'=> $email,'rutParticular'=> $rut,'direccionParticular' => $direccion]);
 
             $users = DB::table('particular')
-                ->where('rutParticular', $terutlefono)
+                ->where('rutParticular', $rut)
                 ->get();
 
             DB::table('telefono')->insert(

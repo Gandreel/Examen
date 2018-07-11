@@ -2,6 +2,8 @@
 
 namespace analisis\Http\Controllers;
 
+use analisis\TipoAnalisis;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
@@ -25,7 +27,8 @@ class analisisMuestraController extends Controller
      */
     public function create()
     {
-        return view('analisis/RecepcioMuestra');
+        $datos = TipoAnalisis::all();
+        return view('analisis/RecepcioMuestra',compact('datos'));
     }
 
     /**
@@ -41,20 +44,34 @@ class analisisMuestraController extends Controller
         $cantidad = $request->input('txtCantMuestra');
         $rutEmpresa = $request->input('txtRut');
         $rutEmpleado = $request->input('txtEmpleado');
-        
+        $tipo = $request->input('Tipo_Ana');
+
         try {
             DB::table('analisismuestras')->insert(
                 ['FechaRecepcion'=>$fecha,'temperaturaMuestra'=>$temperatura,'cantidadMuestra'=>$cantidad,'Particular_codigoParticular'=>$rutEmpresa,'rutEmpleadoRecibe'=>$rutEmpleado]);
+
+            $anali = DB::table('analisismuestras')
+                ->where('Particular_codigoParticular', $rutEmpresa)
+                ->orWhere('rutEmpleadoRecibe',$rutEmpleado)
+                ->orWhere('cantidadMuestra',$cantidad)
+                ->orWhere('FechaRecepcion',$fecha)
+                ->orWhere('temperaturaMuestra',$temperatura)
+                ->get();
+
+            DB::table('resultadoanalisis')->insert(['idTipoAnalisis' => $tipo, 'idAnalisisMuestras' => $user->idAnalisisMuestras,'FechaRegistro' => '0000-00-00', 'PPM' => 0 , 'estado' => 0 ]);
             
         } catch (Exception $e) {
             try {
-                    DB::table('analisismuestras')->insert(
+                DB::table('analisismuestras')->insert(
                     ['FechaRecepcion'=>$fecha,'temperaturaMuestra'=>$temperatura,'cantidadMuestra'=>$cantidad,'Empresa_codigoEmpresa'=>$rutEmpresa,'rutEmpleadoRecibe'=>$rutEmpleado]);
+
+                DB::table('resultadoanalisis')->insert(['idTipoAnalisis' => $tipo, 'idAnalisisMuestras' => $user->idAnalisisMuestras,'FechaRegistro' => '0000-00-00', 'PPM' => 0 , 'estado' => 0 ]);
                     
             } catch (Exception $e) {
                             
             }            
         }
+        
     }
 
     public function ListaMuestra(){

@@ -23,10 +23,10 @@
       </div>
       <div class="col-8">
         <h5>Tipo de analisis a realizar</h5>
-        <select class="text" name="Tipo de Análisis">
-          <option value="C01">Microtoxinas</option>
-          <option value="C02"></option>
-          <option value="C03"></option>
+        <select class="text" name="Tipo_Ana" required>
+          @foreach($datos as $tipo)
+          <option value="{{$tipo->idTipoAnalisis}}">{{ $tipo->nombre }}</option>
+          @endforeach
         </select>
         <input class="boton" type="submit" value="Agregar"/>
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
