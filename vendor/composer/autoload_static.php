@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d
+class ComposerStaticInitc782d86ba6ce3760a5116bddd20c2413
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -23,6 +23,10 @@ class ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'a' => 
+        array (
+            'analisis\\' => 9,
         ),
         'X' => 
         array (
@@ -105,10 +109,6 @@ class ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d
             'Cron\\' => 5,
             'Carbon\\' => 7,
         ),
-        'A' => 
-        array (
-            'Analisis\\' => 9,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -117,6 +117,10 @@ class ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'analisis\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -274,10 +278,6 @@ class ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
-        'Analisis\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app',
-        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -320,34 +320,6 @@ class ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d
     );
 
     public static $classMap = array (
-        'Analisis\\AnalisisMuestra' => __DIR__ . '/../..' . '/app/AnalisisMuestra.php',
-        'Analisis\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'Analisis\\Contacto' => __DIR__ . '/../..' . '/app/Contacto.php',
-        'Analisis\\Empleado' => __DIR__ . '/../..' . '/app/Empleado.php',
-        'Analisis\\Empresa' => __DIR__ . '/../..' . '/app/Empresa.php',
-        'Analisis\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'Analisis\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
-        'Analisis\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
-        'Analisis\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
-        'Analisis\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
-        'Analisis\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'Analisis\\Http\\Controllers\\ParticularController' => __DIR__ . '/../..' . '/app/Http/Controllers/ParticularController.php',
-        'Analisis\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
-        'Analisis\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
-        'Analisis\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
-        'Analisis\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
-        'Analisis\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
-        'Analisis\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'Analisis\\Particular' => __DIR__ . '/../..' . '/app/Particular.php',
-        'Analisis\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
-        'Analisis\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
-        'Analisis\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
-        'Analisis\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
-        'Analisis\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'Analisis\\ResultadoAnalisis' => __DIR__ . '/../..' . '/app/ResultadoAnalisis.php',
-        'Analisis\\Telefono' => __DIR__ . '/../..' . '/app/Telefono.php',
-        'Analisis\\TipoAnalisis' => __DIR__ . '/../..' . '/app/TipoAnalisis.php',
-        'Analisis\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -3624,6 +3596,25 @@ class ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'analisis\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'analisis\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'analisis\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
+        'analisis\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
+        'analisis\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
+        'analisis\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'analisis\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'analisis\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'analisis\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'analisis\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+        'analisis\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
+        'analisis\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
+        'analisis\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'analisis\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
+        'analisis\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
+        'analisis\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
+        'analisis\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
+        'analisis\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'analisis\\User' => __DIR__ . '/../..' . '/app/User.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
@@ -3697,10 +3688,10 @@ class ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitd331ceb5981cd4a20535a1a1dfdd263d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc782d86ba6ce3760a5116bddd20c2413::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc782d86ba6ce3760a5116bddd20c2413::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitc782d86ba6ce3760a5116bddd20c2413::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitc782d86ba6ce3760a5116bddd20c2413::$classMap;
 
         }, null, ClassLoader::class);
     }

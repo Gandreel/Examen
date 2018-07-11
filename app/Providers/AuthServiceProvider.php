@@ -1,6 +1,6 @@
 <?php
 
-namespace Analisis\Providers;
+namespace analisis\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Analisis\Model' => 'Analisis\Policies\ModelPolicy',
+        'analisis\Model' => 'analisis\Policies\ModelPolicy',
     ];
 
     /**

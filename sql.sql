@@ -174,7 +174,7 @@ CREATE TABLE `resultadoanalisis` (
   `PPM` int(11) NOT NULL,
   `estado` bit(1) NOT NULL,
   `rutEmpleadoAnalista` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`idTipoAnalisis`,`idAnalisisMuestras`),
+  PRIMARY KEY (`idTipoAnalisis`),
   KEY `fk_tipoAnalisis_idx` (`idTipoAnalisis`),
   KEY `fk_analisisMuestra_idx` (`idAnalisisMuestras`),
   KEY `fk_empleado2_idx` (`rutEmpleadoAnalista`),
@@ -253,4 +253,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-10 11:32:31
+-- Dump completed on 2018-07-11  9:35:11

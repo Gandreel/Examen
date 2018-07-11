@@ -1,6 +1,6 @@
 <?php
 
-namespace Analisis\Console;
+namespace analisis\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

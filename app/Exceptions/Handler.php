@@ -1,6 +1,6 @@
 <?php
 
-namespace Analisis\Exceptions;
+namespace analisis\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

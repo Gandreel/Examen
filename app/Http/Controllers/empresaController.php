@@ -4,7 +4,7 @@ namespace analisis\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class particularController extends Controller
+class empresaController extends Controller
 {
     /**
      * Display a listing of the resource.

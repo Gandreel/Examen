@@ -1,9 +1,9 @@
 <?php
 
-namespace Analisis\Http\Controllers\Auth;
+namespace analisis\Http\Controllers\Auth;
 
-use Analisis\User;
-use Analisis\Http\Controllers\Controller;
+use analisis\User;
+use analisis\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \Analisis\User
+     * @return \analisis\User
      */
     protected function create(array $data)
     {

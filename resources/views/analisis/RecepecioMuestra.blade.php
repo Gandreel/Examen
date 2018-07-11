@@ -1,6 +1,8 @@
 @extends('analisis.layout.template')
 @section('title', 'Recepcion Muestra')
 @section('contenido')
+
+<form action="muestra" method="post">
 <div class="muestra_titulo">
   <h3>Recepcion de Muestras</h3>
 </div>
@@ -11,7 +13,8 @@
       style="background-image: url('{{asset('img/buscar.png')}}'); background-position: right;background-repeat: no-repeat;"
       placeholder="Codigo Cliente" name="txtCodigo" required>
       <input class="text" type="text" placeholder="Rut Cliente" name="txtRut" required>
-      <input class="text" type="text" placeholder="Nombre Cliente" name="txtMombre" required>
+      <input class="text" type="text" placeholder="Nombre Cliente" name="txtNombre" required>
+      <input class="text" type="text" placeholder="rut empleado" name="txtRutEmpleado" required>
     </div>
     <div class="col-6">
       <h5>Fecha de Recepcion</h5>
@@ -21,7 +24,7 @@
     </div>
     <div class="col-8">
       <h5>Tipo de analisis a realizar</h5>
-      <select class="text" name="Tipo de Análisis">
+      <select class="text" name="Tipo de Analisis">
         <option value="C01">Microtoxinas</option>
         <option value="C02"></option>
         <option value="C03"></option>
@@ -34,4 +37,5 @@
   </div>
   
 </div>
+</form>
 @endsection

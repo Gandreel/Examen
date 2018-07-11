@@ -1,6 +1,6 @@
 <?php
 
-namespace Analisis;
+namespace analisis;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

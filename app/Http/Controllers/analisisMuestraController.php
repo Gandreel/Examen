@@ -4,7 +4,7 @@ namespace analisis\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class particularController extends Controller
+class analisisMuestraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class particularController extends Controller
      */
     public function index()
     {
-        //
+        return view('analisis/index');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Analisis\Http\Middleware;
+namespace analisis\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 

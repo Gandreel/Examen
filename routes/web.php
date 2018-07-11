@@ -15,16 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Controllador para vistas
-Route::get('registro','PaginaController@RegistroParticular');
-Route::get('inicio','PaginaController@index');
-Route::get('muestra','PaginaController@muestra');
-Route::get('login','PaginaController@login');
-
-Route::get('procesar','PaginaController@ListaMuestra');
-Route::post('store','PaginaController@store');
-
-Route::get('registro-Muestra','PaginaController@RegistroMuestra');
-Route::get('buscar','PaginaController@BusquedaMuestra');
-Route::get('resultado','PaginaController@resultadoMuestra');
-
+Route::get('inicio','analisisMuestraController@index');

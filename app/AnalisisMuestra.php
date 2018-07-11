@@ -1,6 +1,6 @@
 <?php
 
-namespace Analisis;
+namespace analisis;
 
 use Illuminate\Database\Eloquent\Model;
 

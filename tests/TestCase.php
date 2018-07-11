@@ -1,20 +1,10 @@
 <?php
-namespace Laraveles\Spanish\Tests;
 
-use Laraveles\Spanish\SpanishServiceProvider;
-use Orchestra\Testbench\TestCase as Orchestra;
+namespace Tests;
 
-abstract class TestCase extends Orchestra
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+
+abstract class TestCase extends BaseTestCase
 {
-    /**
-     * @param \Illuminate\Foundation\Application $app
-     *
-     * @return array
-     */
-    protected function getPackageProviders($app)
-    {
-        return [
-            SpanishServiceProvider::class,
-        ];
-    }
+    use CreatesApplication;
 }

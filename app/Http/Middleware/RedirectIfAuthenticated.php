@@ -1,6 +1,6 @@
 <?php
 
-namespace Analisis\Http\Middleware;
+namespace analisis\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
