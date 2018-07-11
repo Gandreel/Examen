@@ -4,12 +4,12 @@
 <div class="muestra_titulo">
   <h3>Recepcion de Muestras</h3>
 </div>
-<form method="post" action="{{URL::to('store')}}">
-  <div class="muestra_cuerpo">
-    <div class="row">
-      <div class="col-6">
+<div class="muestra_cuerpo">
+  <div class="row">
+    <div class="col-6">
+      <form method="post" action="{{URL::to('store')}}">
         <input class="text search" type="text"
-        style="background-image: url('{{asset('img/buscar.png')}}'); background-position: right;background-repeat: no-repeat;"
+        style="background-image: url('{{asset('img/buscar.png')}}');background-position:right;background-repeat:no-repeat;"
         placeholder="Codigo Cliente" name="txtCodigo" required>
         <input class="text" type="text" placeholder="Rut Cliente" name="txtRut" required>
         <input class="text" type="text" placeholder="Nombre Cliente" name="txtMombre" required>
@@ -28,13 +28,14 @@
           <option value="C02"></option>
           <option value="C03"></option>
         </select>
-        <input class="boton" type="submit" value="Agregar" name="btnAgregar"/>
-        <textarea name="txtDescripcion" class="textArea" placeholder="Descripcion"></textarea>
-        <input class="boton" type="submit" value="Guardar" name="btnGuardar" />
-        <input class="boton" type="submit" value="Salir" name="btnSalir" />
+        <input class="boton" type="submit" value="Agregar"/>
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-      </div>
+        <textarea name="txtDescripcion" class="textArea" placeholder="Descripcion"></textarea>
+      </form>
+      <input class="boton" type="submit" value="Guardar" name="btnGuardar" />
+      <input class="boton" type="submit" value="Salir" name="btnSalir" />
     </div>
-  </form>
+  </div>
+  
 </div>
 @endsection

@@ -3,6 +3,8 @@
 namespace analisis\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
 
 class analisisMuestraController extends Controller
 {
@@ -34,22 +36,27 @@ class analisisMuestraController extends Controller
      */
     public function store(Request $request)
     {
+        $fecha = $request->input('dateFecha');
+        $temperatura = $request->input('txtTemperatura');
+        $cantidad = $request->input('txtCantMuestra');
+        $rutEmpresa = $request->input('txtRut');
+        $rutEmpleado = $request->input('txtEmpleado');
+        
         try {
-            $fecha = $request->input('dateFecha');
-            $temperatura = $request->input('txtTemperatura');
-            $cantidad = $request->input('txtCantMuestra');
-            $rutEmpresa = $request->input('txtRut');
-            $rutEmpleado = $request->input('txtEmpleado');
-
-            echo $fecha;
-
-            DB::insert('insert into analisismuestra (fechaRecepcion,temperaturaMuestra,cantidadMuestra,Empresa_codigoEmpresa,rutEmpleadoRecibe) values(?,?,?,?,?)',[$fecha,$temperatura,$cantidad,$rutEmpresa,$rutEmpleado]);
-
-
-            echo 'registro exitoso';
+                
+            try {
+                DB::table('analisismuestras')->insert(
+                    ['FechaRecepcion'=>$fecha,'temperaturaMuestra'=>$temperatura,'cantidadMuestra'=>$cantidad,'Particular_codigoParticular'=>$rutEmpresa,'rutEmpleadoRecibe'=>$rutEmpleado]);
+            } catch (Exception $e) {
+                
+            }
         } catch (Exception $e) {
-
-            echo 'registro erroneo';
+            try {
+                    DB::table('analisismuestras')->insert(
+                    ['FechaRecepcion'=>$fecha,'temperaturaMuestra'=>$temperatura,'cantidadMuestra'=>$cantidad,'Empresa_codigoEmpresa'=>$rutEmpresa,'rutEmpleadoRecibe'=>$rutEmpleado]);
+            } catch (Exception $e) {
+                            
+            }            
         }
     }
 

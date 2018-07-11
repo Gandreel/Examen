@@ -48,7 +48,6 @@ CREATE TABLE `analisismuestras` (
 
 LOCK TABLES `analisismuestras` WRITE;
 /*!40000 ALTER TABLE `analisismuestras` DISABLE KEYS */;
-INSERT INTO `analisismuestras` VALUES (1,'0000-00-00',0.2,1,NULL,1,'19773471-k'),(2,'0000-00-00',0.2,1,NULL,1,'19773471-k'),(3,'1995-01-29',0.2,1,NULL,1,'19773471-k'),(4,'2018-07-07',0.2,1,NULL,1,'19773471-k'),(5,'0000-00-00',0.2,1,NULL,1,'19773471-k'),(6,'0000-00-00',0.2,1,NULL,1,'19773471-k');
 /*!40000 ALTER TABLE `analisismuestras` ENABLE KEYS */;
 UNLOCK TABLES;
 
