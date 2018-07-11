@@ -43,13 +43,9 @@ class analisisMuestraController extends Controller
         $rutEmpleado = $request->input('txtEmpleado');
         
         try {
-                
-            try {
-                DB::table('analisismuestras')->insert(
-                    ['FechaRecepcion'=>$fecha,'temperaturaMuestra'=>$temperatura,'cantidadMuestra'=>$cantidad,'Particular_codigoParticular'=>$rutEmpresa,'rutEmpleadoRecibe'=>$rutEmpleado]);
-            } catch (Exception $e) {
-                
-            }
+            DB::table('analisismuestras')->insert(
+                ['FechaRecepcion'=>$fecha,'temperaturaMuestra'=>$temperatura,'cantidadMuestra'=>$cantidad,'Particular_codigoParticular'=>$rutEmpresa,'rutEmpleadoRecibe'=>$rutEmpleado]);
+            
         } catch (Exception $e) {
             try {
                     DB::table('analisismuestras')->insert(

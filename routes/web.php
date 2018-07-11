@@ -18,11 +18,10 @@ Route::get('/', function () {
 Route::get('inicio','analisisMuestraController@index');
 
 Route::get('registro','particularController@index');
-<<<<<<< HEAD
+
 Route::post('store2','particularController@store');
-=======
+
 Route::post('store2','particularController@store2');
->>>>>>> f2cfcb28eaefde06c85bb25e3612e5321b03bb44
 
 Route::get('login','particularController@login');
 Route::post('loger','particularController@Loger');
