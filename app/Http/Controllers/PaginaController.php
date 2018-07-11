@@ -3,6 +3,8 @@
 namespace Analisis\Http\Controllers;
 
 use Analisis\ResultadoAnalisis;
+use Analisis\AnalisisMuestra;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +13,10 @@ class PaginaController extends Controller
 {
     public function index(){
     	return view('analisis/index');
+    }
+
+    public function login(){
+        return view('analisis/login');
     }
 
     public function muestra(){
@@ -43,12 +49,13 @@ class PaginaController extends Controller
     }
 
     public function store(Request $request){
+            
             $datos = DB::table('resultadoanalisis')
-            ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
             ->where('resultadoanalisis.idAnalisisMuestras', '=', $request->input('boton'))
-            ->select('analisismuestras.*', 'resultadoanalisis.*')
             ->get();
-        return view('analisis/RegistroMuestra',compact('datos'));
+            //return view('analisis/RegistroMuestra',compact('datos'));
+            echo $datos;
+            
     }
 
 

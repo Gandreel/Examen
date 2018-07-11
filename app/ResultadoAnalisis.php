@@ -8,4 +8,5 @@ class ResultadoAnalisis extends Model
 {
     public $table = 'resultadoanalisis';
     public $timestamps = false;
+    protected $primaryKey = 'idTipoAnalisis';
 }

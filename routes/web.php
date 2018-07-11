@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::get('registro','PaginaController@RegistroParticular');
 Route::get('inicio','PaginaController@index');
 Route::get('muestra','PaginaController@muestra');
+Route::get('login','PaginaController@login');
 
 Route::get('procesar','PaginaController@ListaMuestra');
 Route::post('store','PaginaController@store');

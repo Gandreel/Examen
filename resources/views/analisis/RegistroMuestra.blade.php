@@ -4,12 +4,8 @@
 <div class="muestra_titulo">
     <h3>Registro de las Muestras</h3>
 </div>
-<div class="alert alert-success col-6" role="alert">
-    @if($datos->idAnalisisMuestras != null || $datos->idAnalisisMuestras == '')
+<div class="alert alert-success col-6" role="alert">   
         Codigo del Cliente: {{ $datos->idAnalisisMuestras }}
-    @elseif($datos->Empresa_codigoEmpresa != null || $datos->Empresa_codigoEmpresa == '')
-        Codigo de la Empresa: {{ $datos->Empresa_codigoEmpresa }}
-    @endif
 </div>
 
 <div class="alert alert-success col-6" role="alert">
