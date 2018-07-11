@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('inicio','analisisMuestraController@index');
 
 Route::get('registro','particularController@index');
-Route::post('store','particularController@store')
+Route::post('store','particularController@store');
 
 Route::get('login','particularController@login');
 Route::post('loger','particularController@Loger');

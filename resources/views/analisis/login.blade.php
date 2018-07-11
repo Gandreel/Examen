@@ -9,15 +9,30 @@
 		<link href="{{asset('css/estilo.css')}}" rel="stylesheet" type="text/css" media="all"/>
 	</head>
 	<body background="{{asset('img/fondoLogin.jpg')}}">
-		<form action="{{URL::to('')}}" method="post">
+		<form action="{{URL::to('loger')}}" method="post">
 			<div>
 				<center>
 				<h1 style="color:#FFFFFF">Login de Usuario</h1>
 				&nbsp;
-				<table class='gridtable' type='text/css' href='{{asset('css/estilo.css')}}'>
-					<tr><th style="color:#FFFFFF">USUARIO: </th><td><input name="username" type="text" id=								"username" required></td></tr>
-					<tr><th style="color:#FFFFFF">PASSWORD: </th><td><input name="password" type="password" id="password" required></td></tr>
-					<tr><th style="color:#FFFFFF">INGRESAR: </th><td align=center><input style="font-weight:bold" type="submit" name="Submit" value="Login""></td></tr>
+				<table class='gridtable'>
+					<tr>
+						<td style="color:#FFFFFF">USUARIO: </td>
+						<td>
+							<input name="username" type="text" id="username" required>
+						</td>
+					</tr>
+					<tr>
+						<td style="color:#FFFFFF">PASSWORD: </td>
+						<td>
+							<input name="password" type="password" id="password" required>
+						</td>
+					</tr>
+					<tr>
+						<td style="color:#FFFFFF">INGRESAR: </td>
+						<td align=center>
+							<input style="font-weight:bold" type="submit" name="Submit" value="Login"">
+						</td>
+					</tr>
 				</table>
 				</center>
 			</div>
