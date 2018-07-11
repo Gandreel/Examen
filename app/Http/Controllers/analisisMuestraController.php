@@ -56,16 +56,24 @@ class analisisMuestraController extends Controller
                 ->orWhere('cantidadMuestra',$cantidad)
                 ->orWhere('FechaRecepcion',$fecha)
                 ->orWhere('temperaturaMuestra',$temperatura)
-                ->get();
+                ->first();
 
-            DB::table('resultadoanalisis')->insert(['idTipoAnalisis' => $tipo, 'idAnalisisMuestras' => $user->idAnalisisMuestras,'FechaRegistro' => '0000-00-00', 'PPM' => 0 , 'estado' => 0 ]);
+            DB::table('resultadoanalisis')->insert(['idTipoAnalisis' => $tipo, 'idAnalisisMuestras' => $anali->idAnalisisMuestras,'FechaRegistro' => $fecha, 'PPM' => 0 , 'estado' => 0 ]);
             
         } catch (Exception $e) {
             try {
                 DB::table('analisismuestras')->insert(
                     ['FechaRecepcion'=>$fecha,'temperaturaMuestra'=>$temperatura,'cantidadMuestra'=>$cantidad,'Empresa_codigoEmpresa'=>$rutEmpresa,'rutEmpleadoRecibe'=>$rutEmpleado]);
 
-                DB::table('resultadoanalisis')->insert(['idTipoAnalisis' => $tipo, 'idAnalisisMuestras' => $user->idAnalisisMuestras,'FechaRegistro' => '0000-00-00', 'PPM' => 0 , 'estado' => 0 ]);
+                $anali = DB::table('analisismuestras')
+                ->where('Particular_codigoParticular', $rutEmpresa)
+                ->orWhere('rutEmpleadoRecibe',$rutEmpleado)
+                ->orWhere('cantidadMuestra',$cantidad)
+                ->orWhere('FechaRecepcion',$fecha)
+                ->orWhere('temperaturaMuestra',$temperatura)
+                ->first();
+
+                DB::table('resultadoanalisis')->insert(['idTipoAnalisis' => $tipo, 'idAnalisisMuestras' => $anali->idAnalisisMuestras,'FechaRegistro' => $fecha , 'PPM' => 0 , 'estado' => 0 ]);
                     
             } catch (Exception $e) {
                             

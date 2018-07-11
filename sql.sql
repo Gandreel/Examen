@@ -101,7 +101,6 @@ CREATE TABLE `empleado` (
 
 LOCK TABLES `empleado` WRITE;
 /*!40000 ALTER TABLE `empleado` DISABLE KEYS */;
-INSERT INTO `empleado` VALUES ('19773471-k','Javito-Kun','123','1');
 /*!40000 ALTER TABLE `empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +154,6 @@ CREATE TABLE `particular` (
 
 LOCK TABLES `particular` WRITE;
 /*!40000 ALTER TABLE `particular` DISABLE KEYS */;
-INSERT INTO `particular` VALUES (1,'19772400-5','123456','Alexander Maldonado','algo #775','asl@gmail.com');
 /*!40000 ALTER TABLE `particular` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +171,7 @@ CREATE TABLE `resultadoanalisis` (
   `PPM` int(11) NOT NULL,
   `estado` bit(1) NOT NULL,
   `rutEmpleadoAnalista` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`idTipoAnalisis`),
+  PRIMARY KEY (`idAnalisisMuestras`),
   KEY `fk_tipoAnalisis_idx` (`idTipoAnalisis`),
   KEY `fk_analisisMuestra_idx` (`idAnalisisMuestras`),
   KEY `fk_empleado2_idx` (`rutEmpleadoAnalista`),
@@ -189,7 +187,6 @@ CREATE TABLE `resultadoanalisis` (
 
 LOCK TABLES `resultadoanalisis` WRITE;
 /*!40000 ALTER TABLE `resultadoanalisis` DISABLE KEYS */;
-INSERT INTO `resultadoanalisis` VALUES (1,4,'2018-07-08',150,'\0','19773471-k');
 /*!40000 ALTER TABLE `resultadoanalisis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,7 +227,7 @@ CREATE TABLE `tipoanalisis` (
   `idTipoAnalisis` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`idTipoAnalisis`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,7 +236,7 @@ CREATE TABLE `tipoanalisis` (
 
 LOCK TABLES `tipoanalisis` WRITE;
 /*!40000 ALTER TABLE `tipoanalisis` DISABLE KEYS */;
-INSERT INTO `tipoanalisis` VALUES (1,'Algo');
+INSERT INTO `tipoanalisis` VALUES (2,'Metales Pesados'),(3,'Microtoxinas'),(4,'Plagaguicidas');
 /*!40000 ALTER TABLE `tipoanalisis` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -252,4 +249,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-11  9:35:11
+-- Dump completed on 2018-07-11 12:58:02
