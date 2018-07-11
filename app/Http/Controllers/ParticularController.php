@@ -13,7 +13,17 @@ class particularController extends Controller
      */
     public function index()
     {
-        //
+        return view('analisis/RegistroParticular');
+    }
+
+    public function login()
+    {
+        return view('analisis/login');
+    }
+
+    public function Loger(Request $request)
+    {
+        
     }
 
     /**
@@ -23,7 +33,7 @@ class particularController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +44,7 @@ class particularController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

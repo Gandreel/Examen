@@ -16,3 +16,17 @@ Route::get('/', function () {
 });
 
 Route::get('inicio','analisisMuestraController@index');
+
+Route::get('registro','particularController@index');
+Route::post('store','particularController@store')
+
+Route::get('login','particularController@login');
+Route::post('loger','particularController@Loger');
+
+
+//Route::get('procesar','PaginaController@ListaMuestra');
+//Route::post('store','PaginaController@store');
+
+//Route::get('registro-Muestra','PaginaController@RegistroMuestra');
+//Route::get('buscar','PaginaController@BusquedaMuestra');
+//Route::get('resultado','PaginaController@resultadoMuestra');
