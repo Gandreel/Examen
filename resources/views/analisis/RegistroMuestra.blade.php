@@ -22,24 +22,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if($resultado->idTipoAnalisis == 3)
+                    
                     <tr>
                         <td>Mitocondrias</td>
                         <td><input class="text2" type="text" name="txtMicrotoxinas" required/></td>
                     </tr>
-                    @endif
-                    @if($resultado->idTipoAnalisis == 2)
+                    
+                    
                     <tr>
                         <td>Metales Pesados</td>
                         <td><input class="text2" type="text" name="txtMetalesPesados" required/></td>
                     </tr>
-                    @endif
-                    @if($resultado->idTipoAnalisis == 4)
+                    
                     <tr>
                         <td>Pesticidas</td>
                         <td><input class="text2" type="text" name="txtpestisidas" required/></td>
                     </tr>
-                    @endif
+                    <tr>
+                        <td>Marea roja</td>
+                        <td><input class="text2" type="text" name="txtpestisidas" required/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>BActerias Nocivas</td>
+                        <td><input class="text2" type="text" name="txtpestisidas" required/></td>
+                    </tr>
+                    
+                    
                     <tr>
                         <td>Rut Analizador</td>
                         <td><input class="text2" type="text" name="txtRut" required/></td>

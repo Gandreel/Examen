@@ -154,15 +154,21 @@ class particularController extends Controller
         //
     }
 
+    public function listar(){
+        $clientes=particular::all();
+        return view('administrador/mantenedorCliente',compact('clientes'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($rutParticular)
     {
-        //
+        $clientes=particular::find($rutParticular);
+        return view('administrador/editarParticular',compact('passport','id'));
     }
 
     /**
@@ -172,9 +178,15 @@ class particularController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $rutParticular)
     {
-        //
+        $cliente=particular::find($rutParticular);
+        $cliente->rutParticular=$request->get('rut');
+        $cliente->nombreParticular=$request->get('nombre');
+        $cliente->direccionParticular=$request->get('direccion');
+        $cliente->emailParticular=$request->get('email');
+        $cliente->save();
+        return redirect('administrador/indexAdministrador');
     }
 
     /**
