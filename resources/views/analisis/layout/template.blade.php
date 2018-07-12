@@ -14,17 +14,16 @@
 					<div class="col-1">
 						
 					</div>
-					<div class="titulo col-4">
+					<div class="titulo col-6">
 						<h3>Instituto de Salud Pública</h3>
 					</div>
-					<div class="nav col-7">
+					<div class="nav col-5">
 						<nav class="nav justify-content-end">
 							<a class="nav-item nav-link" href="{{URL::to('inicio')}}">Inicio</a>
 							<a class="nav-item nav-link" href="{{URL::to('registro')}}">Cliente</a>
 							<a class="nav-item nav-link" href="{{URL::to('recepcion')}}">Recepcion</a>
 							<a class="nav-item nav-link" href="{{URL::to('procesar')}}">Lista Mue</a>
 							<a class="nav-item nav-link" href="{{URL::to('buscar')}}">Busqueda Mue</a>
-							<a class="nav-item nav-link" href="{{URL::to('resultado')}}">Resultado Mue</a>
 
 							<a class="nav-item nav-link" href="{{URL::to('out')}}">Salir</a>
 						</nav>
