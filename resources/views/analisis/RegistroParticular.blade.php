@@ -1,13 +1,13 @@
 @extends('analisis.layout.template')
 @section('title', 'Registro')
 @section('contenido')
-<div class="RegistroParticular-cuerpo">
+<div style="background-color: #EFF2FB">
 	<table>
 		<tbody>
 			<tr>
 				<td>
-					<div class="card" style="margin-left: 50px">
-						<img class="card-img-top" src="{{asset('img/Registrar_cliente.jpg')}}" height="400px" alt="Card Image cap" width="200px">
+					<div class="Card" style="margin-left: 50px">
+						<img class="card-img-top" src="{{asset('img/Registrar_cliente.jpg')}}" height="450px" width="300px" alt="Card Image cap">
 					</div>
 				</td>
 				<td>
@@ -23,7 +23,7 @@
 							<button type="submit" name="boton" class="boton4">Registrarse</button>
 							<input type="hidden" name="_token" value="{{csrf_token()}}"/>
 						</form>
-						<label>Ya tienes una cuenta? </label><a href="{{URL::to('login')}}"> Ingresar </a>
+						<label>¿Ya tienes una cuenta? </label><a href="{{URL::to('login')}}"> Ingresar </a>
 					</div>
 				</td>
 			</tr>
