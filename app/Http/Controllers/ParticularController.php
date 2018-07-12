@@ -74,9 +74,10 @@ class particularController extends Controller
             $password = $request->input('txtPassword');
             $email = $request->input('txtEmail');
             $telefono = $request->input('txtTelefono');
+            $direccion = $request->input('txtDir');
 
             DB::table('particular')->insert(
-                ['rutParticular' => $rut,'nombreParticular' =>$nombre,'passwordParticular'=>$password,'emailParticular'=> $email,'rutEmpleadoRecibe'=> $rutEmpleado]);
+                ['rutParticular' => $rut,'nombreParticular' =>$nombre,'passwordParticular'=>$password,'emailParticular'=> $email,'rutParticular'=> $rut,'direccionParticular' => $direccion]);
 
             $users = DB::table('particular')
                 ->where('rutParticular', $terutlefono)

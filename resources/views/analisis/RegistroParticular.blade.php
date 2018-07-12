@@ -16,6 +16,7 @@
 						<form method="post" action="{{URL::to('store2')}}">
 							<input type="text" placeholder="Rut" name="txtRut"> <br><br>
 							<input type="text" placeholder="Nombre" name="txtNombre"> <br><br>
+							<input type="text" placeholder="Direccion" name="txtDir"> <br><br>
 							<input type="password" placeholder="Password" name="txtPassword"> <br><br>
 							<input type="text" placeholder="Email" name="txtEmail"> <br><br>
 							<input type="text" placeholder="Telefono" name="txtTelefono"> <br><br>
