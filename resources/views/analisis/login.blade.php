@@ -21,6 +21,7 @@
                     <option value="1">Empleado</option>
                     <option value="2">Particular</option>
                     <option value="3">Empresa</option>
+                    <option value="4">Administrador</option>
                 </select>
                 <input type="submit" value="Iniciar Sesion">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>

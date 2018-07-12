@@ -70,15 +70,23 @@ class particularController extends Controller
                     }else{
                         echo "<script> alert('Cuenta Desactivada'); window.location= 'login'</script>";
                     }    
-            }else{
+            }else if($tipo == 3){
                 $datos = Empresa::where('nombreEmpresa',$request->input('username'))
                 ->orWhere('passwordEmpresa',$request->input('password'))->first();
                 Session::put('uss', '4');
                 $mensaje = null;
                 return view('analisis/index',compact('mensaje'));
+            }else{
+                $datos = Empleado::where('nombreEmpleado',$request->input('username'))
+                ->orWhere('passwordEmpleado',$request->input('password'))->first();
+
+                if($datos->categoria == 1){
+                    Session::put('uss', '1');
+                    return view('administrador/indexAdministrador');
+                }else {
+                 echo "<script> alert('Usted No es Administrador'); window.location= 'login'</script>";   
+                }
             }
-                 
-                      
         } catch (Exception $e) {
             echo "<script> alert('Error al Ingresar'); window.location= 'login'</script>"; 
         }
