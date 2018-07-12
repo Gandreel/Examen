@@ -4,6 +4,7 @@ namespace analisis\Http\Controllers;
 
 use analisis\TipoAnalisis;
 use analisis\AnalisisMuestra;
+use analisis\ResultadoAnalisis;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -35,7 +36,8 @@ class analisisMuestraController extends Controller
     public function create()
     {
         $datos = TipoAnalisis::all();
-        return view('analisis/RecepcioMuestra',compact('datos'));
+        $mensaje = null;
+        return view('analisis/RecepcioMuestra',compact('datos','mensaje'));
     }
 
     /**
@@ -66,6 +68,10 @@ class analisisMuestraController extends Controller
                 ->first();
 
             DB::table('resultadoanalisis')->insert(['idTipoAnalisis' => $tipo, 'idAnalisisMuestras' => $anali->idAnalisisMuestras,'FechaRegistro' => $fecha, 'PPM' => 0 , 'estado' => 0 ]);
+
+            $datos = TipoAnalisis::all();
+            $mensaje = "Creado Correctamente";
+            return view('analisis/RecepcioMuestra',compact('datos','mensaje')); 
             
         } catch (Exception $e) {
             try {
@@ -81,6 +87,10 @@ class analisisMuestraController extends Controller
                 ->first();
 
                 DB::table('resultadoanalisis')->insert(['idTipoAnalisis' => $tipo, 'idAnalisisMuestras' => $anali->idAnalisisMuestras,'FechaRegistro' => $fecha , 'PPM' => 0 , 'estado' => 0 ]);
+
+                $datos = TipoAnalisis::all();
+                $mensaje = "Creado Correctamente";
+                return view('analisis/RecepcioMuestra',compact('datos','mensaje'));
                     
             } catch (Exception $e) {
                             
@@ -94,11 +104,30 @@ class analisisMuestraController extends Controller
             ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
             ->select('analisismuestras.*', 'resultadoanalisis.estado')
             ->get();
-        return view('analisis/ListaMuestra',compact('datos'));
+            $mensaje = null;
+        return view('analisis/ListaMuestra',compact('datos','mensaje'));
+    }
+
+    public function RegistroMuestra(){
+
+        return view('analisis/RegistroMuestra');
+    }
+
+    public function resultadoMuestra(){
+        return view('analisis/Resultado');        
     }
 
     public function store3(Request $request){
 
+        $analisis = AnalisisMuestra::where('idAnalisisMuestras',$request->input('boton'))
+            ->first();
+
+        $resultado = ResultadoAnalisis::where('idAnalisisMuestras',$analisis->idAnalisisMuestras)
+            ->first();
+
+            return view('analisis/RegistroMuestra',compact('analisis','resultado'));
+
+        
     }
 
     public function buscar()
@@ -116,13 +145,17 @@ class analisisMuestraController extends Controller
      */
     public function show(Request $request)
     {
-        $mensaje = null;
         try {
-            $datos = DB::table('analisismuestras')
-                ->where('idAnalisisMuestras', $request->input('txtCodigoMuestra'))
-                ->first();
+            $mensaje = null;
+            $id = $request->input('txtCodigoMuestra');
+            if($id == ''){
+                $datos = AnalisisMuestra::all();
+                return view('analisis/BusquedaMuestra',compact('datos','mensaje')); 
+            }
+            
+            $datos = AnalisisMuestra::where('idAnalisisMuestras',$request->input('txtCodigoMuestra'))->get();
 
-                return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
+            return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
         } catch (Exception $e) {
             $mensaje = 'Analisis No Encontrado';
             return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
@@ -135,9 +168,30 @@ class analisisMuestraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $id = $request->input('id');
+        $tipo = $request->input('tipo');
+        $rut = $request->input('txtRut');
+        $ppm = null;
+        if($tipo == 2){
+            $ppm = $request->input('txtMetalesPesados');
+        }else if($tipo == 3){
+            $ppm = $request->input('txtMicrotoxinas');
+        }else if($tipo == 4){
+            $ppm = $request->input('txtpestisidas');
+        }
+
+        ResultadoAnalisis::where('idAnalisisMuestras',$id)
+            ->update(['PPM' => $ppm,'estado'=>1,'rutEmpleadoAnalista' => $rut]);
+
+
+            $datos = DB::table('resultadoanalisis')
+            ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
+            ->select('analisismuestras.*', 'resultadoanalisis.estado')
+            ->get();
+            $mensaje = 'Guardado Exitosamente';
+        return view('analisis/ListaMuestra',compact('datos','mensaje'));
     }
 
     /**

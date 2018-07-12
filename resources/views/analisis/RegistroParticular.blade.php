@@ -52,7 +52,7 @@
                 @endif
             </div>
             <div class="reset-password">
-                <a href="#">¿Ya tiene cuenta?</a>
+                <a href="{{URL::to('login')}}">¿Ya tiene cuenta?</a>
             </div>
         </div>
         <script src="{{asset('js/jquery-3.1.1.min.js')}}"></script>

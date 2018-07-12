@@ -16,7 +16,6 @@
             <form action="{{URL::to('loger')}}" method="post">
                 <input type="text" name="username" placeholder="Usuario" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
-                <input type="password" name="password" placeholder="Contraseña" required>
                 <input type="submit" value="Iniciar Sesión">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
             </form>
@@ -26,9 +25,8 @@
         </div>
 
         <div class="formulario">
-            <h2>Te Lo dije Porfiado</h2>
+            <h2 style="text-align: center;">Te lo dije porfiado</h2>
         </div>
-
     </div>
     <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>    
     <script src="{{ asset('js/main2.js') }}"></script>

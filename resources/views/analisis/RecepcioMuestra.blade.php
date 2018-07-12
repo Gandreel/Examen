@@ -35,6 +35,13 @@
       <input class="boton" type="submit" value="Guardar" name="btnGuardar" />
       <input class="boton" type="submit" value="Salir" name="btnSalir" />
     </div>
+    @if($mensaje !=null)
+    <div class="col-3">
+      <div class="alert alert-success" role="alert">
+        {{ $mensaje }}
+      </div>
+    </div>
+    @endif
   </div>
   
 </div>

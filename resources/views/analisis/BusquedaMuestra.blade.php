@@ -8,7 +8,7 @@
 <div class="cuerpo-Listar">
 	
 	<div class="col-4" style="margin: 0 auto;">
-		<form action="{{ URL::to('') }}" method="post">
+		<form action="{{ URL::to('show') }}" method="post">
 			<input type="text" class="text3" placeholder="Codigo de muestra" name="txtCodigoMuestra">
 			<button type="submit" name="boton" class="boton5">Buscar</button>
 			<input type="hidden" name="_token" value="{{csrf_token()}}"/>

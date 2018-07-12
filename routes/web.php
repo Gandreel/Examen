@@ -15,26 +15,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Pagina de Inicio
 Route::get('inicio','analisisMuestraController@index');
-
+//Pagina de Registro
 Route::get('registro','particularController@index');
-
-Route::post('store2','particularController@store2');
-Route::post('store4','empresaController@store4');
-
+//pagina de Login
 Route::get('login','particularController@login');
-Route::post('loger','particularController@Loger');
+Route::get('recepcion','analisisMuestraController@create');
+Route::get('buscar','analisisMuestraController@buscar');
+Route::get('procesar','analisisMuestraController@ListaMuestra');
+Route::get('registro-Muestra','analisisMuestraController@RegistroMuestra');
+//Graficos
+Route::get('resultado','analisisMuestraController@resultadoMuestra');
+//meotodo para desloguearse
 Route::get('out','particularController@out');
 
-Route::get('recepcion','analisisMuestraController@create');
-Route::post('store','analisisMuestraController@store');
 
-Route::get('procesar','analisisMuestraController@ListaMuestra');
 Route::post('store','analisisMuestraController@store');
-
-Route::get('buscar','analisisMuestraController@buscar');
+Route::post('store2','particularController@store2');
+Route::post('store4','empresaController@store4');
+Route::post('store3','analisisMuestraController@store3');
+//meotodo para loguearse
+Route::post('loger','particularController@Loger');
 Route::post('show','analisisMuestraController@show');
+Route::post('edit','analisisMuestraController@edit');
 
-//Route::get('registro-Muestra','PaginaController@RegistroMuestra');
 
-//Route::get('resultado','PaginaController@resultadoMuestra');
