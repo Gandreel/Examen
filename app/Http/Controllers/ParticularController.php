@@ -37,41 +37,50 @@ class particularController extends Controller
     public function Loger(Request $request)
     {
         try {
-            try {
+
+            $tipo = $request->input('tipo');
+
+            if($tipo == 1){
+                $datos = Empleado::where('nombreEmpleado',$request->input('username'))
+                ->orWhere('passwordEmpleado',$request->input('password'))->first();
+
+                if($datos->categoria == 1){
+                    Session::put('uss', '1');
+                    $mensaje = null;
+                    return view('analisis/index',compact('mensaje'));
+                }else if($datos->categoria == 2){
+                    Session::put('uss', '2');
+                    $mensaje = null;
+                    return view('analisis/index',compact('mensaje'));
+                }else if($datos->categoria == 3){
+                    Session::put('uss', '3');
+                    $mensaje = null;
+                    return view('analisis/index',compact('mensaje'));
+                }    
+            }else if($tipo == 2){
                 $datos = Particular::where('nombreParticular',$request->input('username'))
                 ->orWhere('passwordParticular',$request->input('password'))->first();
                 
                 $var = $datos['Activo'];
 
-                if($var == 'A'){
-                    Session::put('uss', '4');
-                    return view('analisis/index');
-                }else{
-                    echo "<script> alert('Cuenta Desactivada'); window.location= 'login'</script>";
-                }
-            } catch (Exception $e) {
-                try {
-                    $datos = Empleado::where('nombreEmpleado',$request->input('username'))
-                    ->orWhere('passwordEmpleado',$request->input('password'))
-                    ->get(); 
-                
-                    Session::put('uss', '4');
-                } catch (Exception $e) {
-                    $datos = Empleado::where('nombreEmpleado',$request->input('username'))
-                    ->orWhere('passwordEmpleado',$request->input('password'))
-                    ->get();
-                    if($datos->categoria == 1){
-                        Session::put('uss', '1');
-                    }else if($datos->categoria == 2){
-                        Session::put('uss', '2');
-                    }else if($datos->categoria == 3){
-                        Session::put('uss', '3');
-                    }                  
-                }
+                    if($var == 'A'){
+                        Session::put('uss', '4');
+                        $mensaje = null;
+                        return view('analisis/index',compact('mensaje'));
+                    }else{
+                        echo "<script> alert('Cuenta Desactivada'); window.location= 'login'</script>";
+                    }    
+            }else{
+                $datos = Empresa::where('nombreEmpresa',$request->input('username'))
+                ->orWhere('passwordEmpresa',$request->input('password'))->first();
+                Session::put('uss', '4');
+                $mensaje = null;
+                return view('analisis/index',compact('mensaje'));
             }
+                 
+                      
         } catch (Exception $e) {
-            echo 'usuario Incorrecto';
-            
+            echo "<script> alert('Error al Ingresar'); window.location= 'login'</script>"; 
         }
     }
 
