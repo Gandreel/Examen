@@ -21,11 +21,11 @@ class analisisMuestraController extends Controller
     public function index()
     {
         if(Session::get('uss') != 0 || Session::get('uss') != null ){
-            return view('analisis/index');
+            $mensaje = null;
+            return view('analisis/index',compact('mensaje'));
         }else{
-            return view('analisis/login');    
+            return view('analisis/login');   
         }
-        
     }
 
     /**
@@ -35,9 +35,19 @@ class analisisMuestraController extends Controller
      */
     public function create()
     {
-        $datos = TipoAnalisis::all();
-        $mensaje = null;
-        return view('analisis/RecepcioMuestra',compact('datos','mensaje'));
+        if(Session::get('uss') == 0 || Session::get('uss') != null ){
+            if(Session::get('uss') == 2){
+                $datos = TipoAnalisis::all();
+            $mensaje = null;
+            return view('analisis/RecepcioMuestra',compact('datos','mensaje'));
+            }else{
+                $mensaje = 'No tiene Permisos';
+                return view('analisis/index',compact('mensaje'));
+            }
+        }else{
+            return view('analisis/login');   
+        }
+        
     }
 
     /**
@@ -101,17 +111,31 @@ class analisisMuestraController extends Controller
     }
 
     public function ListaMuestra(){
-        $datos = DB::table('resultadoanalisis')
+        if(Session::get('uss') != 0 || Session::get('uss') != null ){
+            if(Session::get('uss') == 3){
+            $datos = DB::table('resultadoanalisis')
             ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
             ->select('analisismuestras.*', 'resultadoanalisis.estado')
             ->get();
             $mensaje = null;
-        return view('analisis/ListaMuestra',compact('datos','mensaje'));
+            return view('analisis/ListaMuestra',compact('datos','mensaje'));
+            }else{
+                $mensaje = 'No tiene Permisos';
+                return view('analisis/index',compact('mensaje'));
+            }    
+        }else{
+            return view('analisis/login'); 
+        }
+        
     }
 
     public function RegistroMuestra(){
-
-        return view('analisis/RegistroMuestra');
+        if(Session::get('uss') != 0 || Session::get('uss') != null ){
+            return view('analisis/RegistroMuestra');
+        }else{
+            return view('analisis/login');   
+        }
+        
     }
     public function resultadoMuestra(Request $request){
         $id = $request->input('id');
@@ -133,12 +157,20 @@ class analisisMuestraController extends Controller
 
     public function buscar()
     {
-        $mensaje = null;
-        $datos = DB::table('resultadoanalisis')
+        if(Session::get('uss') != 0 || Session::get('uss') != null ){
+            if(){
+            $mensaje = null;
+            $datos = DB::table('resultadoanalisis')
             ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
             ->select('analisismuestras.*', 'resultadoanalisis.estado')
             ->get();
-        return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
+            return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
+            }else{
+
+            }
+        }else{
+            return view('analisis/login');   
+        }
     }
 
     /**

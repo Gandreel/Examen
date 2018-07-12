@@ -42,15 +42,28 @@ class particularController extends Controller
                 ->orWhere('passwordParticular',$request->input('password'))
                 ->get();
                 
-                Session::put('uss', '1');
+                Session::put('uss', '4');
                 return view('analisis/index');
 
             } catch (Exception $e) {
-                $datos = Empresa::where('nombreEmpresa',$request->input('username'))
-                ->orWhere('passwordEmpresa',$request->input('password'))
-                ->get(); 
+                try {
+                    $datos = Empleado::where('nombreEmpleado',$request->input('username'))
+                    ->orWhere('passwordEmpleado',$request->input('password'))
+                    ->get(); 
                 
-                Session::put('uss', '2');
+                    Session::put('uss', '4');
+                } catch (Exception $e) {
+                    $datos = Empleado::where('nombreEmpleado',$request->input('username'))
+                    ->orWhere('passwordEmpleado',$request->input('password'))
+                    ->get();
+                    if($datos->categoria == 1){
+                        Session::put('uss', '1');
+                    }else if($datos->categoria == 2){
+                        Session::put('uss', '2');
+                    }else if($datos->categoria == 3){
+                        Session::put('uss', '3');
+                    }                  
+                }
             }
         } catch (Exception $e) {
             echo 'usuario Incorrecto';

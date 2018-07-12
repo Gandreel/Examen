@@ -21,9 +21,10 @@ Route::get('inicio','analisisMuestraController@index');
 Route::get('registro','particularController@index');
 //pagina de Login
 Route::get('login','particularController@login');
-Route::get('recepcion','analisisMuestraController@create');
+
+--Route::get('recepcion','analisisMuestraController@create');
 Route::get('buscar','analisisMuestraController@buscar');
-Route::get('procesar','analisisMuestraController@ListaMuestra');
+--Route::get('procesar','analisisMuestraController@ListaMuestra');
 Route::get('registro-Muestra','analisisMuestraController@RegistroMuestra');
 
 //meotodo para desloguearse

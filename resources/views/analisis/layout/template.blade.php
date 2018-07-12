@@ -34,7 +34,6 @@
 			<div class="cuerpo">
 				@yield('contenido')
 			</div>
-			
 			<!-- FOOTER  -->
 			<div class="footer">
 				<div class="nav justify-content-center">

@@ -1,15 +1,20 @@
 @extends('analisis.layout.template')
 @section('title', 'Inicio')
 @section('contenido')
+
 <div class="index-titulo">
 	<h3>Noticias</h3>
 	<p>
 		Esta es una seccion de noticias, la cual tiene la funcion de mantener a nuestros cliente actualizados
-		sobre nuestras inventigaciones y avances. 
-
+		sobre nuestras inventigaciones y avances.
 	</p>
 </div>
-<di class="row">
+@if($mensaje != null)
+	<div class="alert alert-warning" role="alert">
+		{{ $mensaje }}
+	</div>
+@endif
+<div class="row">
 <div class="index-cuerpo">
 	<table>
 		<tbody>
@@ -56,5 +61,5 @@
 		</tbody>
 	</table>
 </div>
-</di>
+</div>
 @endsection
