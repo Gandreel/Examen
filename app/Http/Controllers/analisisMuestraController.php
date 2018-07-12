@@ -50,6 +50,7 @@ class analisisMuestraController extends Controller
             try {
                     DB::table('analisismuestras')->insert(
                     ['FechaRecepcion'=>$fecha,'temperaturaMuestra'=>$temperatura,'cantidadMuestra'=>$cantidad,'Empresa_codigoEmpresa'=>$rutEmpresa,'rutEmpleadoRecibe'=>$rutEmpleado]);
+                    
             } catch (Exception $e) {
                             
             }            
