@@ -19,7 +19,7 @@ class analisisMuestraController extends Controller
      */
     public function index()
     {
-        if(Session::get('uss') != null){
+        if(Session::get('uss') != 0 || Session::get('uss') != null ){
             return view('analisis/index');
         }else{
             return view('analisis/login');    

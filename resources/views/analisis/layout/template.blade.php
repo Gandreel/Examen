@@ -19,9 +19,10 @@
 					</div>
 					<div class="nav col-3">
 						<nav class="nav justify-content-end">
-							<a class="nav-item nav-link" href="{{URL('inicio')}}">Inicio</a>
-							<a class="nav-item nav-link" href="{{URL('registro')}}">Cliente</a>
+							<a class="nav-item nav-link" href="{{URL::to('inicio')}}">Inicio</a>
+							<a class="nav-item nav-link" href="{{URL::to('registro')}}">Cliente</a>
 							<a class="nav-item nav-link" href="#">Intranet</a>
+							<a class="nav-item nav-link" href="{{URL::to('out')}}">Salir</a>
 						</nav>
 					</div>
 				</div>

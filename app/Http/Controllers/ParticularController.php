@@ -26,6 +26,12 @@ class particularController extends Controller
         return view('analisis/login');
     }
 
+    public function out()
+    {
+        Session::forget('uss');
+        return redirect()->action('analisisMuestraController@index');
+    }
+
     public function Loger(Request $request)
     {
         try {

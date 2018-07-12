@@ -25,6 +25,7 @@ Route::post('store2','particularController@store2');
 
 Route::get('login','particularController@login');
 Route::post('loger','particularController@Loger');
+Route::get('out','particularController@out');
 
 Route::get('recepcion','analisisMuestraController@create');
 Route::post('store','analisisMuestraController@store');
