@@ -1,42 +1,30 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Iniciar Sesión</title>
-		<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" media="all"/>
-		<link href="{{asset('css/estilo.css')}}" rel="stylesheet" type="text/css" media="all"/>
-	</head>
-	<body background="{{asset('img/fondoLogin.jpg')}}">
-		<form action="{{URL::to('loger')}}" method="post">
-			<div>
-				<center>
-				<h1 style="color:#FFFFFF">Login de Usuario</h1>
-				&nbsp;
-				<table class='gridtable'>
-					<tr>
-						<td style="color:#FFFFFF">USUARIO: </td>
-						<td>
-							<input name="username" type="text" id="username" required>
-						</td>
-					</tr>
-					<tr>
-						<td style="color:#FFFFFF">PASSWORD: </td>
-						<td>
-							<input name="password" type="password" id="password" required>
-						</td>
-					</tr>
-					<tr>
-						<td style="color:#FFFFFF">INGRESAR: </td>
-						<td align=center>
-							<input style="font-weight:bold" type="submit" name="Submit" value="Login"">
-							<input type="hidden" name="_token" value="{{csrf_token()}}"/>
-						</td>
-					</tr>
-				</table>
-				</center>
-			</div>
-		</form>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }} ">
+</head>
+<body>
+    <div class="contenedor-form">
+        <div class="toggle">
+            
+        </div>
+        
+        <div class="formulario">
+            <h2>Iniciar Sesión</h2>
+            <form action="{{URL::to('loger')}}" method="post">
+                <input type="text" name="username" placeholder="Usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="submit" value="Iniciar Sesión">
+                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+            </form>
+        </div>
+        <div class="reset-password">
+            <a href="{{ URL::to('registro') }}">Registrarse</a>
+        </div>
+    </div>
+    <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>    
+    <script src="{{ asset('js/main.js') }}"></script>
+</body>
 </html>

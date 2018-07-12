@@ -7,6 +7,7 @@ use analisis\Empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class particularController extends Controller
 {
@@ -27,18 +28,21 @@ class particularController extends Controller
 
     public function Loger(Request $request)
     {
-        echo 'funciona';
         try {
             try {
                 $datos = Particular::where('nombreParticular',$request->input('username'))
                 ->orWhere('passwordParticular',$request->input('password'))
                 ->get();
-                //
+                
+                Session::put('uss', '1');
+                return view('analisis/index');
+
             } catch (Exception $e) {
                 $datos = Empresa::where('nombreEmpresa',$request->input('username'))
                 ->orWhere('passwordEmpresa',$request->input('password'))
                 ->get(); 
-                //
+                
+                Session::put('uss', '2');
             }
         } catch (Exception $e) {
             echo 'usuario Incorrecto';

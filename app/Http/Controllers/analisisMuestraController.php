@@ -8,6 +8,7 @@ use analisis\AnalisisMuestra;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class analisisMuestraController extends Controller
 {
@@ -18,7 +19,12 @@ class analisisMuestraController extends Controller
      */
     public function index()
     {
-        return view('analisis/index');
+        if(Session::get('uss') != null){
+            return view('analisis/index');
+        }else{
+            return view('analisis/login');    
+        }
+        
     }
 
     /**
