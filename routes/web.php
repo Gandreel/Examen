@@ -27,10 +27,9 @@ Route::get('registro','particularController@index');
 //pagina de Login
 Route::get('login','particularController@login');
 
---Route::get('recepcion','analisisMuestraController@create');
+Route::get('recepcion','analisisMuestraController@create');
 Route::get('buscar','analisisMuestraController@buscar');
---Route::get('procesar','analisisMuestraController@ListaMuestra');
-Route::get('registro-Muestra','analisisMuestraController@RegistroMuestra');
+Route::get('procesar','analisisMuestraController@ListaMuestra');
 
 //meotodo para desloguearse
 Route::get('out','particularController@out');

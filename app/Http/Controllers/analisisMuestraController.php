@@ -129,14 +129,6 @@ class analisisMuestraController extends Controller
         
     }
 
-    public function RegistroMuestra(){
-        if(Session::get('uss') != 0 || Session::get('uss') != null ){
-            return view('analisis/RegistroMuestra');
-        }else{
-            return view('analisis/login');   
-        }
-        
-    }
     public function resultadoMuestra(Request $request){
         $id = $request->input('id');
         $tipo = TipoAnalisis::all();
@@ -158,7 +150,7 @@ class analisisMuestraController extends Controller
     public function buscar()
     {
         if(Session::get('uss') != 0 || Session::get('uss') != null ){
-            if(){
+            if(Session::get('uss') == 4){
             $mensaje = null;
             $datos = DB::table('resultadoanalisis')
             ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
@@ -166,7 +158,8 @@ class analisisMuestraController extends Controller
             ->get();
             return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
             }else{
-
+                $mensaje = 'No tiene Permisos';
+                return view('analisis/index',compact('mensaje'));
             }
         }else{
             return view('analisis/login');   
