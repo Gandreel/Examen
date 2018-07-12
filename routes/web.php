@@ -19,9 +19,8 @@ Route::get('inicio','analisisMuestraController@index');
 
 Route::get('registro','particularController@index');
 
-Route::post('store2','particularController@store');
-
 Route::post('store2','particularController@store2');
+Route::post('store4','empresaController@store4');
 
 Route::get('login','particularController@login');
 Route::post('loger','particularController@Loger');
@@ -31,7 +30,7 @@ Route::get('recepcion','analisisMuestraController@create');
 Route::post('store','analisisMuestraController@store');
 
 Route::get('procesar','analisisMuestraController@ListaMuestra');
-Route::post('store3','analisisMuestraController@store');
+Route::post('store','analisisMuestraController@store');
 
 Route::get('buscar','analisisMuestraController@buscar');
 Route::post('show','analisisMuestraController@show');

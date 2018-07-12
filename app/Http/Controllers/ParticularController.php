@@ -4,6 +4,7 @@ namespace analisis\Http\Controllers;
 
 use analisis\Particular;
 use analisis\Empresa;
+use analisis\Empleado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
@@ -17,8 +18,9 @@ class particularController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('analisis/RegistroParticular');
+    {   
+        $mensaje = null;
+        return view('analisis/RegistroParticular',compact('mensaje'));
     }
 
     public function login()
@@ -86,12 +88,32 @@ class particularController extends Controller
             $telefono = $request->input('txtTelefono');
             $direccion = $request->input('txtDir');
 
+            $valida = Particular::all();
+            foreach($valida as $val){
+                if($val->nombreParticular == $nombre){
+                    $mensaje = 'Usuario ya existente';
+                    return view('analisis/RegistroParticular',compact('mensaje'));
+                }
+            }
+
+            $valida = Empresa::all();
+            foreach($valida as $val){
+                if($val->nombreEmpresa == $nombre){
+                    $mensaje = 'Usuario ya existente';
+                    return view('analisis/RegistroParticular',compact('mensaje'));
+                }
+            }
+
+            $valida = Empleado::all();
+            foreach($valida as $val){
+                if($val->nombreEmpleado == $nombre){
+                    $mensaje = 'Usuario ya existente';
+                    return view('analisis/RegistroParticular',compact('mensaje'));
+                }
+            }
+
             DB::table('particular')->insert(
                 ['rutParticular' => $rut,'nombreParticular' =>$nombre,'passwordParticular'=>$password,'emailParticular'=> $email,'rutParticular'=> $rut,'direccionParticular' => $direccion]);
-
-            $users = DB::table('particular')
-                ->where('rutParticular', $rut)
-                ->get();
 
             $users = DB::table('particular')->select('codigoParticular')
                 ->where('rutParticular', $rut)
@@ -100,10 +122,11 @@ class particularController extends Controller
             DB::table('telefono')->insert(
                 ['numeroTelefono'=> $telefono,'Particular_codigoParticular' => $users->codigoParticular]);
 
-            echo "Ha sido registrado";
+            return view('analisis/login');
 
          } catch (Exception $e) {
-            echo "Error, vuelva a intentarlo";
+            $mensaje = 'Error al registrar';
+            return view('analisis/RegistroParticular',compact('mensaje'));
         }
     }
 

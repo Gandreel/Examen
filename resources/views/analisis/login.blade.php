@@ -16,6 +16,7 @@
             <form action="{{URL::to('loger')}}" method="post">
                 <input type="text" name="username" placeholder="Usuario" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
                 <input type="submit" value="Iniciar Sesión">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
             </form>
