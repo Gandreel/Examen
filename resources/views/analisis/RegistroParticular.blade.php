@@ -14,7 +14,7 @@
         
         <div class="formulario">
             <h2>Registro Personas</h2>
-            <form action="#">       
+            <form action="{{URL::to('')}}" action="{{}}">       
                 <input type="text" placeholder="Rut" name="txtRut">
                 <input type="text" placeholder="Nombre" name="txtNombre">
                 <input type="text" placeholder="Direccion" name="txtDir">
@@ -27,7 +27,7 @@
         
         <div class="formulario">
             <h2>Registro Empresas</h2>
-            <form action="#">
+            <form action="{{URL::to('')}}" method="post">
                 <input type="text" placeholder="rut Empresa" name="txtRut" required>
                 
                 <input type="text" placeholder="Nombre Empresa" name="txtNombre" required>

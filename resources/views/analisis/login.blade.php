@@ -8,7 +8,7 @@
 <body>
     <div class="contenedor-form">
         <div class="toggle">
-            
+            <span id="p1">No Presionar</span>
         </div>
         
         <div class="formulario">
@@ -23,8 +23,13 @@
         <div class="reset-password">
             <a href="{{ URL::to('registro') }}">Registrarse</a>
         </div>
+
+        <div class="formulario">
+            <h2>Te Lo dije Porfiado</h2>
+        </div>
+
     </div>
     <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>    
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/main2.js') }}"></script>
 </body>
 </html>
