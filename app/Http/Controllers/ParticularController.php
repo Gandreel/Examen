@@ -37,37 +37,50 @@ class particularController extends Controller
     public function Loger(Request $request)
     {
         try {
-            try {
-                $datos = Particular::where('nombreParticular',$request->input('username'))
-                ->orWhere('passwordParticular',$request->input('password'))
-                ->get();
-                
-                Session::put('uss', '4');
-                return view('analisis/index');
 
-            } catch (Exception $e) {
-                try {
-                    $datos = Empleado::where('nombreEmpleado',$request->input('username'))
-                    ->orWhere('passwordEmpleado',$request->input('password'))
-                    ->get(); 
+            $tipo = $request->input('tipo');
+
+            if($tipo == 1){
+                $datos = Empleado::where('nombreEmpleado',$request->input('username'))
+                ->orWhere('passwordEmpleado',$request->input('password'))->first();
+
+                if($datos->categoria == 1){
+                    Session::put('uss', '1');
+                    $mensaje = null;
+                    return view('analisis/index',compact('mensaje'));
+                }else if($datos->categoria == 2){
+                    Session::put('uss', '2');
+                    $mensaje = null;
+                    return view('analisis/index',compact('mensaje'));
+                }else if($datos->categoria == 3){
+                    Session::put('uss', '3');
+                    $mensaje = null;
+                    return view('analisis/index',compact('mensaje'));
+                }    
+            }else if($tipo == 2){
+                $datos = Particular::where('nombreParticular',$request->input('username'))
+                ->orWhere('passwordParticular',$request->input('password'))->first();
                 
-                    Session::put('uss', '4');
-                } catch (Exception $e) {
-                    $datos = Empleado::where('nombreEmpleado',$request->input('username'))
-                    ->orWhere('passwordEmpleado',$request->input('password'))
-                    ->get();
-                    if($datos->categoria == 1){
-                        Session::put('uss', '1');
-                    }else if($datos->categoria == 2){
-                        Session::put('uss', '2');
-                    }else if($datos->categoria == 3){
-                        Session::put('uss', '3');
-                    }                  
-                }
+                $var = $datos['Activo'];
+
+                    if($var == 'A'){
+                        Session::put('uss', '4');
+                        $mensaje = null;
+                        return view('analisis/index',compact('mensaje'));
+                    }else{
+                        echo "<script> alert('Cuenta Desactivada'); window.location= 'login'</script>";
+                    }    
+            }else{
+                $datos = Empresa::where('nombreEmpresa',$request->input('username'))
+                ->orWhere('passwordEmpresa',$request->input('password'))->first();
+                Session::put('uss', '4');
+                $mensaje = null;
+                return view('analisis/index',compact('mensaje'));
             }
+                 
+                      
         } catch (Exception $e) {
-            echo 'usuario Incorrecto';
-            
+            echo "<script> alert('Error al Ingresar'); window.location= 'login'</script>"; 
         }
     }
 
@@ -157,7 +170,7 @@ class particularController extends Controller
     }
 
     public function listar(){
-        $clientes=particular::all();
+        $clientes=particular::where('Activo','A')->get();
         return view('administrador/mantenedorCliente',compact('clientes'));
     }
 
@@ -187,7 +200,7 @@ class particularController extends Controller
         Particular::where('codigoParticular',$request->get('id'))
             ->update(['rutParticular' => $request->get('rut'),'nombreParticular'=> $request->get('nombre'),'direccionParticular'=> $request->get('direccion'),'emailParticular'=> $request->get('email')]);
 
-        $clientes=particular::all();  
+        $clientes=particular::where('Activo','A')->get();  
         return view('administrador/indexAdministrador',compact('clientes'));
     }
 
@@ -197,8 +210,13 @@ class particularController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+
+        Particular::where('codigoParticular',$request->get('id'))
+            ->update(['Activo' => 'D']);
+
+        $clientes=particular::where('Activo','A')->get();  
+        return view('administrador/indexAdministrador',compact('clientes'));
     }
 }

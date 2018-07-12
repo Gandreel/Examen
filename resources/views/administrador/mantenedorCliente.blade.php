@@ -35,16 +35,24 @@
 
             <td>
               <form action="{{URL::to('edit2')}}" method="post">
-                <input type="submit" class="" value="Edit">
-                <input type="hidden" name="id"  class="btn btn-danger" value="{{$cliente['codigoParticular']}}"/>
+                <input type="submit" class="btn btn-warning" value="Edit">
+                <input type="hidden" name="id" value="{{$cliente['codigoParticular']}}"/>
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
               </form>
             </td>
             <td>
+<<<<<<< HEAD
 
               @csrf
               <input name="_method" type="hidden" value="DELETE">
               <button class="btn btn-danger" type="submit">Delete</button>
+=======
+            </form>
+            <form action="{{URL::to('destroy')}}" method="post">
+              <input type="submit" class="btn btn-danger" value="delete">
+                <input type="hidden" name="id" value="{{$cliente['codigoParticular']}}"/>
+                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+>>>>>>> 26d1c51e1a99614510a6e16965e4158c3c3911d3
             </form>
           </td>
         </tr>
