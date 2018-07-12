@@ -29,10 +29,16 @@
 						{{ $mue->idAnalisisMuestras }}
 					</td>
 					<td style="text-align: center;">
-						@if($mue->estado = 0)
-						<h6>En proceso</h6>
+						@if($mue->estado == 1)
+						<h6>
+						<form action="{{URL::to('resultado')}}" method="post">
+							<button type="submit" name="boton2" class="boton2">Terminado</button>
+							<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+							<input type="hidden" name="id" value="{{$mue->idAnalisisMuestras}}"/>
+						</form>
+						</h6>
 						@else
-						<h6>Terminado</h6>
+						<h6>En proceso</h6>
 						@endif
 					</td>
 				</tr>

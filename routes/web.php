@@ -25,8 +25,7 @@ Route::get('recepcion','analisisMuestraController@create');
 Route::get('buscar','analisisMuestraController@buscar');
 Route::get('procesar','analisisMuestraController@ListaMuestra');
 Route::get('registro-Muestra','analisisMuestraController@RegistroMuestra');
-//Graficos
-Route::get('resultado','analisisMuestraController@resultadoMuestra');
+
 //meotodo para desloguearse
 Route::get('out','particularController@out');
 
@@ -39,5 +38,7 @@ Route::post('store3','analisisMuestraController@store3');
 Route::post('loger','particularController@Loger');
 Route::post('show','analisisMuestraController@show');
 Route::post('edit','analisisMuestraController@edit');
+//Graficos
+Route::post('resultado','analisisMuestraController@resultadoMuestra');
 
 

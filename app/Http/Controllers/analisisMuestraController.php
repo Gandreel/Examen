@@ -55,6 +55,8 @@ class analisisMuestraController extends Controller
         $rutEmpleado = $request->input('txtEmpleado');
         $tipo = $request->input('Tipo_Ana');
 
+        echo $tipo;
+
         try {
             DB::table('analisismuestras')->insert(
                 ['FechaRecepcion'=>$fecha,'temperaturaMuestra'=>$temperatura,'cantidadMuestra'=>$cantidad,'Particular_codigoParticular'=>$rutEmpresa,'rutEmpleadoRecibe'=>$rutEmpleado]);
@@ -96,7 +98,6 @@ class analisisMuestraController extends Controller
                             
             }            
         }
-        
     }
 
     public function ListaMuestra(){
@@ -112,9 +113,11 @@ class analisisMuestraController extends Controller
 
         return view('analisis/RegistroMuestra');
     }
-
-    public function resultadoMuestra(){
-        return view('analisis/Resultado');        
+    public function resultadoMuestra(Request $request){
+        $id = $request->input('id');
+        $tipo = TipoAnalisis::all();
+        $resultado = ResultadoAnalisis::where('idAnalisisMuestras',$id)->first();
+        return view('analisis/Resultado',compact('resultado','tipo'));        
     }
 
     public function store3(Request $request){
@@ -126,14 +129,15 @@ class analisisMuestraController extends Controller
             ->first();
 
             return view('analisis/RegistroMuestra',compact('analisis','resultado'));
-
-        
     }
 
     public function buscar()
     {
         $mensaje = null;
-        $datos = AnalisisMuestra::all();
+        $datos = DB::table('resultadoanalisis')
+            ->join('analisismuestras', 'analisismuestras.idAnalisisMuestras', '=', 'resultadoanalisis.idAnalisisMuestras')
+            ->select('analisismuestras.*', 'resultadoanalisis.estado')
+            ->get();
         return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
     }
 
