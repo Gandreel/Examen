@@ -79,9 +79,12 @@ class particularController extends Controller
             DB::table('particular')->insert(
                 ['rutParticular' => $rut,'nombreParticular' =>$nombre,'passwordParticular'=>$password,'emailParticular'=> $email,'rutParticular'=> $rut,'direccionParticular' => $direccion]);
 
-            $users = DB::table('particular')
-                ->where('rutParticular', $terutlefono)
-                ->get();
+            $users = DB::table('particular')->select('codigoParticular')
+                ->where('rutParticular', $rut)
+                ->first();
+
+               
+             
 
             DB::table('telefono')->insert(
                 ['numeroTelefono'=> $telefono,'Particular_codigoParticular' => $users->codigoParticular]);
