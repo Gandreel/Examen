@@ -39,12 +39,16 @@ class particularController extends Controller
         try {
             try {
                 $datos = Particular::where('nombreParticular',$request->input('username'))
-                ->orWhere('passwordParticular',$request->input('password'))
-                ->get();
+                ->orWhere('passwordParticular',$request->input('password'))->first();
                 
-                Session::put('uss', '4');
-                return view('analisis/index');
+                $var = $datos['Activo'];
 
+                if($var == 'A'){
+                    Session::put('uss', '4');
+                    return view('analisis/index');
+                }else{
+                    echo "<script> alert('Cuenta Desactivada'); window.location= 'login'</script>";
+                }
             } catch (Exception $e) {
                 try {
                     $datos = Empleado::where('nombreEmpleado',$request->input('username'))
@@ -155,7 +159,7 @@ class particularController extends Controller
     }
 
     public function listar(){
-        $clientes=particular::all();
+        $clientes=particular::where('Activo','A')->get();
         return view('administrador/mantenedorCliente',compact('clientes'));
     }
 
@@ -185,7 +189,7 @@ class particularController extends Controller
         Particular::where('codigoParticular',$request->get('id'))
             ->update(['rutParticular' => $request->get('rut'),'nombreParticular'=> $request->get('nombre'),'direccionParticular'=> $request->get('direccion'),'emailParticular'=> $request->get('email')]);
 
-        $clientes=particular::all();  
+        $clientes=particular::where('Activo','A')->get();  
         return view('administrador/indexAdministrador',compact('clientes'));
     }
 
@@ -195,8 +199,13 @@ class particularController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+
+        Particular::where('codigoParticular',$request->get('id'))
+            ->update(['Activo' => 'D']);
+
+        $clientes=particular::where('Activo','A')->get();  
+        return view('administrador/indexAdministrador',compact('clientes'));
     }
 }
