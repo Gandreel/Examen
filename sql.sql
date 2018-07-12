@@ -159,7 +159,7 @@ CREATE TABLE `particular` (
 
 LOCK TABLES `particular` WRITE;
 /*!40000 ALTER TABLE `particular` DISABLE KEYS */;
-INSERT INTO `particular` VALUES (2,'19328150-8','1234','Luis Laz','Olmue','Luis@gmail.com','D');
+INSERT INTO `particular` VALUES (2,'19328150-8','1234','Luis Laz','Olmue','Luis@gmail.com','A');
 /*!40000 ALTER TABLE `particular` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,7 +235,7 @@ CREATE TABLE `tipoanalisis` (
   `nombre` varchar(45) NOT NULL,
   `color` varchar(45) NOT NULL,
   PRIMARY KEY (`idTipoAnalisis`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,7 +244,7 @@ CREATE TABLE `tipoanalisis` (
 
 LOCK TABLES `tipoanalisis` WRITE;
 /*!40000 ALTER TABLE `tipoanalisis` DISABLE KEYS */;
-INSERT INTO `tipoanalisis` VALUES (2,'Metales Pesados','red'),(3,'Microtoxinas','blue'),(4,'Plagaguicidas','green');
+INSERT INTO `tipoanalisis` VALUES (2,'Metales Pesados','red'),(3,'Microtoxinas','blue'),(4,'Plagaguicidas','green'),(5,'Marea Roja','yellow'),(6,'Bacterias Nocivas','orange');
 /*!40000 ALTER TABLE `tipoanalisis` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -257,4 +257,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-12 13:03:46
+-- Dump completed on 2018-07-12 14:40:24
