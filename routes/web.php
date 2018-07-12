@@ -18,9 +18,15 @@ Route::get('/', function () {
 //Pagina administrador
 Route::get('administrador','administradorController@index');
 Route::get('mantenedorParticular','ParticularController@listar');
+Route::get('mantenedorEmpleado','empleadoController@listar');
 Route::post('edit2','ParticularController@edit');
 Route::post('update','ParticularController@update');
+<<<<<<< HEAD
 Route::post('destroy','ParticularController@destroy');
+=======
+Route::post('update2','empleadoController@update');
+Route::post('edit3','empleadoController@edit');
+>>>>>>> dcd118b242b1b7f05834df0cac850241a0c714c2
 
 //Pagina de Inicio
 Route::get('inicio','analisisMuestraController@index');

@@ -3,6 +3,10 @@
 namespace analisis\Http\Controllers;
 
 use Illuminate\Http\Request;
+use analisis\Empleado;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class empleadoController extends Controller
 {
@@ -48,15 +52,22 @@ class empleadoController extends Controller
         //
     }
 
+    public function listar(){
+        $empleados=empleado::all();
+        return view('administrador/mantenedorEmpleado',compact('empleados'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $empleado = empleado::where('rutEmpleado',$request->input('id'))->first();
+        $rutEmpleado = $empleado->rutEmpleado;
+        return view('administrador/editarEmpleado',compact('empleado','rutEmpleado'));
     }
 
     /**
@@ -66,9 +77,13 @@ class empleadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        Empleado::where('rutEmpleado',$request->get('id'))
+        ->update(['rutEmpleado' => $request->get('rut'),'nombreEmpleado'=> $request->get('nombre'),'categoria'=> $request->get('categoria')]);
+
+    $empleados=empleado::all();  
+    return view('administrador/indexAdministrador',compact('empleados'));
     }
 
     /**
