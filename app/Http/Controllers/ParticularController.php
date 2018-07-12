@@ -148,7 +148,7 @@ class particularController extends Controller
             }
 
             DB::table('particular')->insert(
-                ['rutParticular' => $rut,'nombreParticular' =>$nombre,'passwordParticular'=>$password,'emailParticular'=> $email,'rutParticular'=> $rut,'direccionParticular' => $direccion]);
+                ['rutParticular' => $rut,'nombreParticular' =>$nombre,'passwordParticular'=>$password,'emailParticular'=> $email,'rutParticular'=> $rut,'direccionParticular' => $direccion,'Activo'=> 'A']);
 
             $users = DB::table('particular')->select('codigoParticular')
                 ->where('rutParticular', $rut)
