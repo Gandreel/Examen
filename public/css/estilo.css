@@ -119,9 +119,26 @@
 	background-color: #FE2E64;
 	color: #fff;
 	padding: 4px;
-	width: 150px;
+	width: 70%;
 }
 
 .cuerpo-Registrar{
 	background-color: #0CB7F2;
+}
+
+.tabla{
+	margin-left: 0;
+}
+
+.tabla th,td{
+	border-bottom: none;
+	margin:0 auto;
+	text-align: center;
+}
+
+.text2{
+	width: 325px;
+	margin: 10px;
+	background-color: #EFF2FB;
+	color: #000000;
 }
