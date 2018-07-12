@@ -4,6 +4,9 @@ namespace analisis\Http\Controllers;
 
 use Illuminate\Http\Request;
 use analisis\Http\Controllers\Controller;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class administradorController extends Controller
 {
@@ -13,8 +16,17 @@ class administradorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('administrador/indexAdministrador');
+    {   
+        if(Session::get('uss') == 0 || Session::get('uss') != null ){
+            if(Session::get('uss') == 1){
+                return view('administrador/indexAdministrador');
+            }else{
+                $mensaje = 'No tiene Permisos';
+                return view('analisis/index',compact('mensaje'));
+            }
+        }else{
+            return view('analisis/login');   
+        }
     }
 
     /**

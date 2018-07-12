@@ -53,8 +53,17 @@ class empleadoController extends Controller
     }
 
     public function listar(){
-        $empleados=empleado::all();
-        return view('administrador/mantenedorEmpleado',compact('empleados'));
+        if(Session::get('uss') == 0 || Session::get('uss') != null ){
+            if(Session::get('uss') == 1){
+                $empleados=empleado::all();
+                return view('administrador/mantenedorEmpleado',compact('empleados'));
+            }else{
+                $mensaje = 'No tiene Permisos';
+                return view('analisis/index',compact('mensaje'));
+            }
+        }else{
+            return view('analisis/login');   
+        }
     }
 
     /**

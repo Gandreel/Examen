@@ -190,9 +190,18 @@ class particularController extends Controller
      */
     public function edit(Request $request)
     {
-        $cliente = particular::where('codigoParticular',$request->input('id'))->first();
-        $rutParticular = $cliente->rutParticular;
-        return view('administrador/editarParticular',compact('cliente','rutParticular'));
+        if(Session::get('uss') == 0 || Session::get('uss') != null ){
+            if(Session::get('uss') == 1){
+                $cliente = particular::where('codigoParticular',$request->input('id'))->first();
+                $rutParticular = $cliente->rutParticular;
+                return view('administrador/editarParticular',compact('cliente','rutParticular'));
+            }else{
+                $mensaje = 'No tiene Permisos';
+                return view('analisis/index',compact('mensaje'));
+            }
+        }else{
+            return view('analisis/login');   
+        }
     }
 
     /**
