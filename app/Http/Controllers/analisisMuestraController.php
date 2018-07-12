@@ -38,8 +38,8 @@ class analisisMuestraController extends Controller
         if(Session::get('uss') == 0 || Session::get('uss') != null ){
             if(Session::get('uss') == 2){
                 $datos = TipoAnalisis::all();
-            $mensaje = null;
-            return view('analisis/RecepcioMuestra',compact('datos','mensaje'));
+                $mensaje = null;
+                return view('analisis/RecepcioMuestra',compact('datos','mensaje'));
             }else{
                 $mensaje = 'No tiene Permisos';
                 return view('analisis/index',compact('mensaje'));

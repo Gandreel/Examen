@@ -4,7 +4,7 @@ USE `examen`;
 --
 -- Host: 127.0.0.1    Database: examen
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.32-MariaDB
+-- Server version	5.5.5-10.1.29-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -103,7 +103,7 @@ CREATE TABLE `empleado` (
 
 LOCK TABLES `empleado` WRITE;
 /*!40000 ALTER TABLE `empleado` DISABLE KEYS */;
-INSERT INTO `empleado` VALUES ('19773471-k','Javata','123456','1');
+INSERT INTO `empleado` VALUES ('11584648-6','cris','123456','2'),('18996624-5','Luis Salin','123','1'),('19772400-5','Alexander','1234','3'),('19773471-k','Javata','12345','3');
 /*!40000 ALTER TABLE `empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +159,7 @@ CREATE TABLE `particular` (
 
 LOCK TABLES `particular` WRITE;
 /*!40000 ALTER TABLE `particular` DISABLE KEYS */;
-INSERT INTO `particular` VALUES (2,'19328150-8','1234','Luis Laz','Olmue','Luis@gmail.com','A');
+INSERT INTO `particular` VALUES (2,'19328150-8','1234','Luis Lazo','Olmue','Luis@gmail.com','A');
 /*!40000 ALTER TABLE `particular` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -257,4 +257,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-12 14:40:24
+-- Dump completed on 2018-07-12 16:22:41

@@ -46,8 +46,7 @@ class particularController extends Controller
 
                 if($datos->categoria == 1){
                     Session::put('uss', '1');
-                    $mensaje = null;
-                    return view('analisis/index',compact('mensaje'));
+                    return view('administrador/indexAdministrador');
                 }else if($datos->categoria == 2){
                     Session::put('uss', '2');
                     $mensaje = null;

@@ -19,14 +19,13 @@
 					</div>
 					<div class="nav col-8">
 						<nav class="nav justify-content-end">
-							<a class="nav-item nav-link" href="{{URL::to('inicio')}}">Inicio</a>
+							<a class="nav-item nav-link" href="{{URL::to('administrador')}}">Inicio</a>
 							<a class="nav-item nav-link" href="{{URL::to('mantenedorParticular')}}">Cliente</a>
 							<a class="nav-item nav-link" href="{{URL::to('mantenedorEmpleado')}}">Trabajador</a>
 							<a class="nav-item nav-link" href="{{URL::to('recepcion')}}">Recepcion</a>
 							<a class="nav-item nav-link" href="{{URL::to('procesar')}}">Lista Mue</a>
 							<a class="nav-item nav-link" href="{{URL::to('buscar')}}">Busqueda Mue</a>
 							<a class="nav-item nav-link" href="{{URL::to('resultado')}}">Resultado Mue</a>
-
 							<a class="nav-item nav-link" href="{{URL::to('out')}}">Salir</a>
 						</nav>
 					</div>
