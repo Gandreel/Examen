@@ -5,6 +5,8 @@ namespace analisis\Http\Controllers;
 use analisis\Particular;
 use analisis\Empresa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
 
 class particularController extends Controller
 {
@@ -64,9 +66,28 @@ class particularController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store2(Request $request)
     {
-        
+        try {
+            $rut = $request->input('txtRut');
+            $nombre = $request->input('txtNombre');
+            $password = $request->input('txtPassword');
+            $email = $request->input('txtEmail');
+            $telefono = $request->input('txtTelefono');
+
+            DB::insert('insert into telefono (numeroTelefono) values(?)',[$telefono]);
+
+            $users = DB::table('telefono')
+                ->where('numeroTelefono =', $telefono)
+                ->get('');
+
+            DB::insert('insert into particular (rutParticular,nombreParticular,passwordParticular,emailParticular) values(?,?,?,?)',[$rut,$nombre,$password,$email]);
+
+            echo "Ha sido registrado";
+
+         } catch (Exception $e) {
+            echo "Error, vuelva a intentarlo";
+        }
     }
 
     /**

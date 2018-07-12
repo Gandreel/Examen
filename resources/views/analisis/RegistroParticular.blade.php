@@ -13,7 +13,7 @@
 				<td>
 					<div align="rigth" style="margin-left: 50px">
 						<h4>Registro del Cliente</h4>
-						<form method="post" action="{{URL::to('store')}}">
+						<form method="post" action="{{URL::to('store2')}}">
 							<input type="text" placeholder="Rut" name="txtRut"> <br><br>
 							<input type="text" placeholder="Nombre" name="txtNombre"> <br><br>
 							<input type="password" placeholder="Password" name="txtPassword"> <br><br>
