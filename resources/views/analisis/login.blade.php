@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }} ">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" media="all"/>
 </head>
 <body>
     <div class="contenedor-form">
@@ -16,7 +17,7 @@
             <form action="{{URL::to('loger')}}" method="post">
                 <input type="text" name="username" placeholder="Usuario" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
-                <input type="submit" value="Iniciar Sesión">
+                <input type="submit" value="Iniciar Sesion">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
             </form>
         </div>

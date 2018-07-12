@@ -14,11 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 //Pagina administrador
 Route::get('administrador','administradorController@index');
 Route::get('mantenedorParticular','ParticularController@listar');
-Route::get('editarParticular','ParticularController@edit');
-
+Route::post('edit2','ParticularController@edit');
+Route::post('update','ParticularController@update');
 
 //Pagina de Inicio
 Route::get('inicio','analisisMuestraController@index');

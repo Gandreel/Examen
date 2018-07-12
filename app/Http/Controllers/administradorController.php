@@ -14,7 +14,6 @@ class administradorController extends Controller
      */
     public function index()
     {
-        
         return view('administrador/indexAdministrador');
     }
 

@@ -165,10 +165,11 @@ class particularController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($rutParticular)
+    public function edit(Request $request)
     {
-        $clientes=particular::find($rutParticular);
-        return view('administrador/editarParticular',compact('passport','id'));
+        $cliente = particular::where('codigoParticular',$request->input('id'))->first();
+        $rutParticular = $cliente->rutParticular;
+        return view('administrador/editarParticular',compact('cliente','rutParticular'));
     }
 
     /**
@@ -178,15 +179,14 @@ class particularController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $rutParticular)
+    public function update(Request $request)
     {
-        $cliente=particular::find($rutParticular);
-        $cliente->rutParticular=$request->get('rut');
-        $cliente->nombreParticular=$request->get('nombre');
-        $cliente->direccionParticular=$request->get('direccion');
-        $cliente->emailParticular=$request->get('email');
-        $cliente->save();
-        return redirect('administrador/indexAdministrador');
+
+        Particular::where('codigoParticular',$request->get('id'))
+            ->update(['rutParticular' => $request->get('rut'),'nombreParticular'=> $request->get('nombre'),'direccionParticular'=> $request->get('direccion'),'emailParticular'=> $request->get('email')]);
+
+        $clientes=particular::all();  
+        return view('administrador/indexAdministrador',compact('clientes'));
     }
 
     /**
