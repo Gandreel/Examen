@@ -3,6 +3,7 @@
 namespace analisis\Http\Controllers;
 
 use analisis\TipoAnalisis;
+use analisis\AnalisisMuestra;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -94,15 +95,32 @@ class analisisMuestraController extends Controller
 
     }
 
+    public function buscar()
+    {
+        $mensaje = null;
+        $datos = AnalisisMuestra::all();
+        return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
+    }
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $mensaje = null;
+        try {
+            $datos = DB::table('analisismuestras')
+                ->where('idAnalisisMuestras', $request->input('txtCodigoMuestra'))
+                ->first();
+
+                return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
+        } catch (Exception $e) {
+            $mensaje = 'Analisis No Encontrado';
+            return view('analisis/BusquedaMuestra',compact('datos','mensaje'));
+        }
     }
 
     /**

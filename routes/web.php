@@ -32,6 +32,9 @@ Route::post('store','analisisMuestraController@store');
 Route::get('procesar','analisisMuestraController@ListaMuestra');
 Route::post('store3','analisisMuestraController@store');
 
+Route::get('buscar','analisisMuestraController@buscar');
+Route::post('show','analisisMuestraController@show');
+
 //Route::get('registro-Muestra','PaginaController@RegistroMuestra');
-//Route::get('buscar','PaginaController@BusquedaMuestra');
+
 //Route::get('resultado','PaginaController@resultadoMuestra');
