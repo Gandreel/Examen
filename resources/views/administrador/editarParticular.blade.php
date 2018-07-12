@@ -1,3 +1,7 @@
+@extends('administrador.layout.template')
+@section('title', 'editarParticular')
+@section('contenido')
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -49,3 +53,4 @@
     </div>
   </body>
 </html>
+@endsection

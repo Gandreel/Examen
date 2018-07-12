@@ -1,3 +1,7 @@
+@extends('administrador.layout.template')
+@section('title', 'editarEmpleado')
+@section('contenido')
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,7 +34,7 @@
             <input type="text" class="form-control" name="categoria" value="{{$empleado->categoria}}">
           </div>
         </div>
-        
+
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="margin-top:60px">
@@ -43,3 +47,4 @@
     </div>
   </body>
 </html>
+@endsection

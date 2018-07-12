@@ -1,3 +1,7 @@
+@extends('administrador.layout.template')
+@section('title', 'mantenedorEmpleado')
+@section('contenido')
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,24 +11,24 @@
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" media="all"/>
   </head>
   <body>
-    <div class="container">      
+    <div class="container">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Rut</th>   
+            <th>Rut</th>
             <th>Nombre</th>
             <th>categoria</th>
             <th colspan="2">Action</th>
           </tr>
         </thead>
         <tbody>
-          
+
           @foreach($empleados as $empleado)
           <tr>
             <td>{{$empleado['rutEmpleado']}}</td>
             <td>{{$empleado['nombreEmpleado']}}</td>
             <td>{{$empleado['categoria']}}</td>
-            
+
             <td>
               <form action="{{URL::to('edit3')}}" method="post">
                 <input type="submit" class="" value="Edit">
@@ -33,7 +37,7 @@
               </form>
             </td>
             <td>
-              
+
               @csrf
               <input name="_method" type="hidden" value="DELETE">
               <button class="btn btn-danger" type="submit">Delete</button>
@@ -48,3 +52,5 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
+
+@endsection
